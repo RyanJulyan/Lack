@@ -11,20 +11,53 @@ if (document.location.search.indexOf('theme=') >= 0) {
 var app = new Framework7({
   id: 'io.framework7.testapp',
   root: '#app',
+  touch: {
+    // Enable fast clicks
+    fastClicks: true,
+  },
   theme: theme,
-  data: function () {
-    return {
-      user: {
-        firstName: 'John',
-        lastName: 'Doe',
-      },
-    };
-  },
   methods: {
-    helloWorld: function () {
-      app.dialog.alert('Hello World!');
-    },
+      unlock: function () {
+        var app = this;
+		
+		window.screenLocker.unlock(successCallback, errorCallback, 2);
+        
+      },
+      more: function () {
+        var self = this;
+        app.dialog.alert('More');
+      },
+      share: function () {
+        var app = this;
+        app.dialog.alert('Share');
+      },
   },
+	on: {
+	  pageBeforeRemove() {
+		var self = this;
+		self.actions.destroy();
+	  },
+	  pageInit: function () {
+		var self = this;
+		var app = self;
+		
+        self.popupSwipeHandler = self.popup.create({
+          el: '.demo-popup-swipe-handler',
+          swipeToClose: 'to-bottom',
+          swipeHandler: '.swipe-handler'
+        });
+		
+		$(document).on("click", "#unlock", function(){
+			app.methods.unlock();
+		});
+		$(document).on("click", "#more", function(){
+			app.methods.more();
+		});
+		$(document).on("click", "#share", function(){
+			app.methods.share();
+		});
+	  },
+	},
   routes: routes,
   popup: {
     closeOnEscape: true,
@@ -42,3 +75,25 @@ var app = new Framework7({
     placementId: 'pltd4o7ibb9rc653x14',
   },
 });
+
+var successCallback = function() {
+  // console.log('screen unlock success');
+  // do some staff here
+  cordova.plugins.backgroundMode.moveToForeground();
+};
+ 
+var errorCallback = function(e) {
+  console.log('error: ' + e);
+  app.dialog.alert('error: ' + e);
+};
+
+document.addEventListener('deviceready', function () {
+    // cordova.plugins.backgroundMode is now available
+	cordova.plugins.backgroundMode.enable();
+	var backgroundModeActive = cordova.plugins.backgroundMode.isActive();
+		
+	if(backgroundModeActive){
+		cordova.plugins.backgroundMode.unlock();
+	}
+		
+}, false);
