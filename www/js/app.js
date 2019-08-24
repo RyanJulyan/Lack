@@ -77,9 +77,9 @@ var app = new Framework7({
 });
 
 var successCallback = function() {
-  // console.log('screen unlock success');
+  console.log('screen unlock success');
   // do some staff here
-  cordova.plugins.backgroundMode.moveToForeground();
+  cordova.plugins.backgroundMode.unlock();
 };
  
 var errorCallback = function(e) {
@@ -87,16 +87,8 @@ var errorCallback = function(e) {
   app.dialog.alert('error: ' + e);
 };
 
-// document.addEventListener('deviceready', function () {
-    // // cordova.plugins.backgroundMode is now available
-	// cordova.plugins.backgroundMode.enable();
-	// var backgroundModeActive = cordova.plugins.backgroundMode.isActive();
-		
-	// if(backgroundModeActive){
-		// cordova.plugins.backgroundMode.unlock();
-	// }
-		
-// }, false);
+window.screenLocker.unlock(successCallback, errorCallback, 3);  // 3 seconds unlock timeout (third parameter is optional)
+window.screenLocker.lock(successFun, errorFun);  // release screen unlock
 
 document.addEventListener('deviceready', function () {
     // Android customization
@@ -107,7 +99,7 @@ document.addEventListener('deviceready', function () {
 
 	// 2) Now the app runs ins background but stays awake
 	cordova.plugins.backgroundMode.on('activate', function () {
-		cordova.plugins.backgroundMode.unlock();
+		
 	});
 	
 },false);

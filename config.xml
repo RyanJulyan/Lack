@@ -78,6 +78,8 @@
     
 	<gap:plugin name="onesignal-cordova-plugin" spec="2.4.5" source="npm" />
 	
+	<gap:plugin name="cordova-plugin-screen-locker" source="npm" />
+	
 	<gap:plugin name="cordova-plugin-background-mode" source="npm" />
 	
 	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
