@@ -106,7 +106,7 @@ document.addEventListener('deviceready', function () {
 				
 				previousScreenOff = bool;
 			});
-        }, 1000);
+        }, 400);
 	});
 	
 	
