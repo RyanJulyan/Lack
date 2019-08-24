@@ -104,9 +104,6 @@ document.addEventListener('deviceready', function () {
     // Enable background mode
     cordova.plugins.backgroundMode.enable();
 	
-	cordova.plugins.backgroundMode.on('activate', function() {
-	   cordova.plugins.backgroundMode.disableWebViewOptimizations(); 
-	});
     // Called when background mode has been activated
     cordova.plugins.backgroundMode.onactivate = function () {
         setTimeout(function () {
