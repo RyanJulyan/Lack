@@ -18,17 +18,12 @@ var app = new Framework7({
   theme: theme,
   methods: {
       unlock: function () {
-        var app = this;
-		
-		window.screenLocker.unlock(successCallback, errorCallback, 2);
-        
+        cordova.plugins.backgroundMode.moveToBackground();
       },
       more: function () {
-        var self = this;
         app.dialog.alert('More');
       },
       share: function () {
-        var app = this;
         app.dialog.alert('Share');
       },
   },
