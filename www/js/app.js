@@ -100,21 +100,14 @@ var errorCallback = function(e) {
 
 document.addEventListener('deviceready', function () {
     // Android customization
-    cordova.plugins.backgroundMode.setDefaults({ silent: true, text:'Doing heavy tasks.'});
+    cordova.plugins.backgroundMode.setDefaults({silent: true});
     // Enable background mode
     // 1) Request background execution
 	cordova.plugins.backgroundMode.enable();
 
 	// 2) Now the app runs ins background but stays awake
 	cordova.plugins.backgroundMode.on('activate', function () {
-		setInterval(function () {
-			cordova.plugins.notification.badge.increase();
-		}, 1000);
-	});
-
-	// 3) App is back to foreground
-	cordova.plugins.backgroundMode.on('deactivate', function () {
-		cordova.plugins.notification.badge.clear();
+		cordova.plugins.backgroundMode.unlock();
 	});
 	
 },false);
