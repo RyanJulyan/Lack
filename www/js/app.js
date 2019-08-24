@@ -115,5 +115,6 @@ document.addEventListener('deviceready', function () {
                 text:'Running in background for more than 5s now.'
             });
         }, 5000);
-    }
-});
+    });
+	
+},false);
