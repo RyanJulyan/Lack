@@ -20,7 +20,9 @@
 	<allow-navigation href="data:*" />
 	
     <platform name="android">
-      
+		  <config-file parent="./" target="app/src/main/AndroidManifest.xml" xmlns:android="http://schemas.android.com/apk/res/android">
+			<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+		  </config-file>
 		  <allow-intent href="market:*" />
 	      <preference name="SplashMaintainAspectRatio" value="true"/>
 	      <preference name="SplashShowOnlyFirstTime" value="true"/>
@@ -99,10 +101,6 @@
 	
 	<config-file platform="ios" target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
 		<string>We are using Location services to allow users to use Googles' places and location API to find services of interest close to the user. We Do not store the users location data on the App nor do we intend to analyze the data that the user inputs through this service for any purpose.</string>
-	</config-file>
-	
-	<config-file platform="android" target="AndroidManifest.xml" parent="/manifest">
-		<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 	</config-file>
 	
 </widget>
