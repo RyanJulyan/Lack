@@ -87,10 +87,13 @@ var errorCallback = function(e) {
   app.dialog.alert('error: ' + e);
 };
 
-window.screenLocker.unlock(successCallback, errorCallback, 3);  // 3 seconds unlock timeout (third parameter is optional)
-window.screenLocker.lock(successFun, errorFun);  // release screen unlock
 
 document.addEventListener('deviceready', function () {
+
+
+	window.screenLocker.unlock(successCallback, errorCallback, 3);  // 3 seconds unlock timeout (third parameter is optional)
+	window.screenLocker.lock(successFun, errorFun);  // release screen unlock
+	
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({silent: true});
     // Enable background mode
