@@ -100,12 +100,15 @@ var errorCallback = function(e) {
 
 document.addEventListener('deviceready', function () {
     // Android customization
-    cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
+    cordova.plugins.backgroundMode.setDefaults({ silent: true, text:'Doing heavy tasks.'});
     // Enable background mode
     cordova.plugins.backgroundMode.enable();
 	
+	
+    cordova.plugins.backgroundMode.disableWebViewOptimizations();
+	
     // Called when background mode has been activated
-    cordova.plugins.backgroundMode.onactivate = function () {
+    cordova.plugins.backgroundMode.on('activate', function () {
         setTimeout(function () {
             // Modify the currently displayed notification
             cordova.plugins.backgroundMode.configure({
@@ -113,4 +116,4 @@ document.addEventListener('deviceready', function () {
             });
         }, 5000);
     }
-}, false);
+});
