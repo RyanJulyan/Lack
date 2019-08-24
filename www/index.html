@@ -1,49 +1,112 @@
 <!DOCTYPE html>
-<!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
- -->
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com ws://echo.websocket.org 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Background Plugin</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Background Plugin</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-            <div class="container">
-                <a id="silent" href="#" class="button grey"><span>✓</span>Silent mode</a>
-                <a id="mode" href="#" class="button orange"><span>✓</span>Background</a>
-            </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+  
+  <meta name="format-detection" content="telephone=yes">
+  <meta name="msapplication-tap-highlight" content="yes">
+  
+  <title>Lack</title>
+  <link rel="stylesheet" href="css/framework7.bundle.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="apple-touch-icon" href="img/f7-icon-square.png">
+  <link rel="icon" href="img/f7-icon.png">
+</head>
+<body>
+  <div id="app">
+    <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
+      <div class="page page-home">
+        <div class="page-content">
+			<div class="card demo-card-header-pic">
+			  <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg); height:60vh" valign="bottom" class="card-header">Journey To Mountains</div>
+			  <div class="card-content card-content-padding">
+				<p class="date">Posted on January 21, 2015</p>
+				<p>Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis. Phasellus quis nibh hendrerit...</p>
+			  </div>	
+			  <div class="card-footer" style="padding:0px">
+				<div class="list" style="width:100%">			  
+					<ul>
+					  <li class="swipeout">
+						<div class="swipeout-content">
+						  <div class="item-content" style="padding-left:0px">
+							<div class="col" style="padding:15px">
+								<i class="icon f7-icons if-not-md">unlock</i>
+								<i class="icon material-icons md-only">lock_open</i>
+								<i class="icon f7-icons if-not-md">arrow_right</i>
+								<i class="icon material-icons md-only">arrow_forward</i>
+							</div>
+							<div class="col" style="padding:15px">
+								Slide
+							</div>
+							<div class="col" style="padding:15px">
+								<i class="icon f7-icons if-not-md">arrow_left</i>
+								<i class="icon material-icons md-only">arrow_back</i>
+								<i class="icon f7-icons if-not-md">share</i>
+								<i class="icon material-icons md-only">share</i>
+							</div>
+						  </div>
+						</div>
+						<div class="swipeout-actions-left">
+						  <a href="#" id='unlock' class="swipeout-overswipe" @click="app.methods.unlock()">Unlock</a>
+						</div>
+						<div class="swipeout-actions-right">
+						  <a href="#" id="share" class="color-blue" @click="app.methods.share()">Share</a>
+						  <a href="#" id="more" class="swipeout-overswipe popup-open color-green" @click="app.methods.more()"  data-popup=".demo-popup-swipe-handler">View</a>
+						</div>
+					  </li>
+					</ul>
+				</div>
+			  </div>
+			</div>
+          <div class="block-title block-title-medium searchbar-hide-on-search">Themes</div>
+          <div class="list links-list searchbar-hide-on-search">
+            <ul>
+              <li>
+                <a href="./index.html?theme=ios" class="external">iOS Theme</a>
+              </li>
+              <li>
+                <a href="./index.html?theme=md" class="external">Material (MD) Theme</a>
+              </li>
+              <li>
+                <a href="./index.html?theme=aurora" class="external">Aurora Desktop Theme</a>
+              </li>
+              <li>
+                <a href="/color-themes/">Color Themes</a>
+              </li>
+            </ul>
+          </div>
+		  
+			<div class="popup demo-popup-swipe-handler">
+			  <div class="page">
+				<div class="swipe-handler"></div>
+				<div class="page-content">
+				  <div class="block-title block-title-large">Interested?</div>
+				  <div class="block block-strong">
+					<div class="card demo-card-header-pic">
+					  <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg)" valign="bottom" class="card-header">Journey To Mountains</div>
+					  <div class="card-content card-content-padding">
+						<p class="date">Posted on January 21, 2015</p>
+						<p>Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis. Phasellus quis nibh hendrerit...</p>
+					  </div>
+					  <div class="card-footer"><a href="#" class="link">Share</a><a href="#" class="link">Details</a></div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
         </div>
-        <div class="copyright">
-            © 2017 appPlant<br/>
-            Made with <g-emoji alias="yum" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60b.png">😋</g-emoji> from Leipzig
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+      </div>
+    </div>
+  </div>
+  <script src="js/framework7.bundle.min.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/app.js"></script>
+  
+  <script type="text/javascript" src="cordova.js"></script>
+</body>
 </html>
