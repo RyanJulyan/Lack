@@ -102,19 +102,19 @@ document.addEventListener('deviceready', function () {
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({ silent: true, text:'Doing heavy tasks.'});
     // Enable background mode
-    cordova.plugins.backgroundMode.enable();
-	
-	
-    cordova.plugins.backgroundMode.disableWebViewOptimizations();
-	
-    // Called when background mode has been activated
-    cordova.plugins.backgroundMode.on('activate', function () {
-        setTimeout(function () {
-            // Modify the currently displayed notification
-            cordova.plugins.backgroundMode.configure({
-                text:'Running in background for more than 5s now.'
-            });
-        }, 5000);
-    });
+    // 1) Request background execution
+	cordova.plugins.backgroundMode.enable();
+
+	// 2) Now the app runs ins background but stays awake
+	cordova.plugins.backgroundMode.on('activate', function () {
+		setInterval(function () {
+			cordova.plugins.notification.badge.increase();
+		}, 1000);
+	});
+
+	// 3) App is back to foreground
+	cordova.plugins.backgroundMode.on('deactivate', function () {
+		cordova.plugins.notification.badge.clear();
+	});
 	
 },false);
