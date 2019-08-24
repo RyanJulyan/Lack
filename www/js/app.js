@@ -76,23 +76,13 @@ var app = new Framework7({
   },
 });
 
-var successCallback = function() {
-  console.log('screen unlock success');
-  // do some staff here
-  cordova.plugins.backgroundMode.unlock();
-};
- 
-var errorCallback = function(e) {
-  console.log('error: ' + e);
-  app.dialog.alert('error: ' + e);
-};
+//Used to check if the screen was off previously
+var previousScreenOff = false;
 
+// Set globally to allow for it to be cleared
+var backgroundModeTimer;
 
 document.addEventListener('deviceready', function () {
-
-
-	window.screenLocker.unlock(successCallback, errorCallback, 3);  // 3 seconds unlock timeout (third parameter is optional)
-	window.screenLocker.lock(successFun, errorFun);  // release screen unlock
 	
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({silent: true});
@@ -102,7 +92,27 @@ document.addEventListener('deviceready', function () {
 
 	// 2) Now the app runs ins background but stays awake
 	cordova.plugins.backgroundMode.on('activate', function () {
+		//disable most optimizations done by Android/CrossWalk
+		cordova.plugins.backgroundMode.disableWebViewOptimizations();
 		
+		// Repeat check every second set to backgroundModeTimer
+		backgroundModeTimer = setInterval(function () {
+			//Check if the screen was off and is now on
+			cordova.plugins.backgroundMode.isScreenOff(function(bool) {
+				
+				if (previousScreenOff && !bool){
+					cordova.plugins.backgroundMode.unlock();
+				}
+				
+				previousScreenOff = bool;
+			});
+        }, 1000);
+	});
+	
+	
+	cordova.plugins.backgroundMode.on('deactivate', function () {
+		// Clear backgroundModeTimer
+		clearInterval(backgroundModeTimer);
 	});
 	
 },false);
