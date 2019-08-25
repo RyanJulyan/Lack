@@ -42,7 +42,7 @@ var app = new Framework7({
 		var app = self;
 		
         self.popupSwipeHandler = self.popup.create({
-          el: '.view_advert_details_popup',
+          el: '.demo-popup-swipe-handler',
           swipeToClose: 'to-bottom',
           swipeHandler: '.swipe-handler'
         });
