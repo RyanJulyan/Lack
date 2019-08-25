@@ -52,11 +52,11 @@
 						  </div>
 						</div>
 						<div class="swipeout-actions-left">
-						  <a href="#" id='unlock' class="swipeout-overswipe" @click="app.methods.unlock()">Unlock</a>
+						  <a href="#" id='unlock' class="swipeout-overswipe swipeout-close" @click="app.methods.unlock()">Unlock</a>
 						</div>
 						<div class="swipeout-actions-right">
 						  <a href="#" id="share" class="color-blue" @click="app.methods.share()">Share</a>
-						  <a href="#" id="more" class="swipeout-overswipe popup-open color-green" @click="app.methods.more()"  data-popup=".demo-popup-swipe-handler">View</a>
+						  <a href="#" id="more" class="swipeout-overswipe popup-open color-green swipeout-close" @click="app.methods.more()"  data-popup=".view_advert_details_popup">View</a>
 						</div>
 					  </li>
 					</ul>
@@ -80,8 +80,25 @@
               </li>
             </ul>
           </div>
-		  
-			<div class="popup demo-popup-swipe-handler">
+			<div class="popup view_advert_details_popup">
+			  <div class="page">
+				<div class="swipe-handler"></div>
+				<div class="page-content">
+				  <div class="block-title block-title-large">Interested?</div>
+				  <div class="block block-strong">
+					<div class="card demo-card-header-pic">
+					  <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg)" valign="bottom" class="card-header">Journey To Mountains</div>
+					  <div class="card-content card-content-padding">
+						<p class="date">Posted on January 21, 2015</p>
+						<p>Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis. Phasellus quis nibh hendrerit...</p>
+					  </div>
+					  <div class="card-footer"><a href="#" class="link">Share</a><a href="#" class="link">Details</a></div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="popup view_profile_details_popup">
 			  <div class="page">
 				<div class="swipe-handler"></div>
 				<div class="page-content">

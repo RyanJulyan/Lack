@@ -18,6 +18,11 @@ var app = new Framework7({
   theme: theme,
   methods: {
       unlock: function () {
+		
+		if ($('.modal-in').length > 0) {
+			app.popup.close();
+		}
+		
         cordova.plugins.backgroundMode.moveToBackground();
       },
       more: function () {
@@ -37,7 +42,7 @@ var app = new Framework7({
 		var app = self;
 		
         self.popupSwipeHandler = self.popup.create({
-          el: '.demo-popup-swipe-handler',
+          el: '.view_advert_details_popup',
           swipeToClose: 'to-bottom',
           swipeHandler: '.swipe-handler'
         });
@@ -71,6 +76,13 @@ var app = new Framework7({
   },
 });
 
+function onBackButton() {
+	if ($('.modal-in').length > 0) {
+		app.popup.close();
+		return false;
+	}
+}
+
 //Used to check if the screen was off previously
 var previousScreenOff = false;
 
@@ -78,6 +90,8 @@ var previousScreenOff = false;
 var backgroundModeTimer;
 
 document.addEventListener('deviceready', function () {
+	// prevent back button causing issues with close
+	document.addEventListener('backbutton', onBackButton, false);
 	
     // Android customization
     cordova.plugins.backgroundMode.setDefaults({silent: true});
