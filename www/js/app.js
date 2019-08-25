@@ -143,7 +143,6 @@ document.addEventListener('deviceready', function () {
         }, 400);
 	});
 	
-	
 	cordova.plugins.backgroundMode.on('deactivate', function () {
 		// Clear backgroundModeTimer
 		clearInterval(backgroundModeTimer);
