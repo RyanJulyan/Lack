@@ -77,9 +77,6 @@ var app = new Framework7({
 		$(document).on("click", ".share", function(){
 			app.methods.share();
 		});
-		$(document).on("click", "#share", function(){
-			app.methods.share();
-		});
 	  },
 	},
   routes: routes,
@@ -127,6 +124,10 @@ document.addEventListener('deviceready', function () {
 	cordova.plugins.backgroundMode.on('activate', function () {
 		//disable most optimizations done by Android/CrossWalk
 		cordova.plugins.backgroundMode.disableWebViewOptimizations();
+		
+		if ($('.modal-in').length > 0) {
+			app.popup.close();
+		}
 		
 		// Repeat check every second set to backgroundModeTimer
 		backgroundModeTimer = setInterval(function () {
