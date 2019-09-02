@@ -52,6 +52,16 @@ var app = new Framework7({
 
 		window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
       },
+      hideContactSearchAndNav: function () {
+		$('.searchbar').hide();
+		$('.list-index').hide();
+		$('.segmented').show();
+      },
+      showContactSearchAndNav: function () {
+		$('.segmented').hide();
+		$('.searchbar').show();
+		$('.list-index').show();
+      },
   },
 	on: {
 	  pageBeforeRemove() {
@@ -61,12 +71,27 @@ var app = new Framework7({
 	  pageInit: function () {
 		var self = this;
 		var app = self;
+
 		
         self.popupSwipeHandler = self.popup.create({
           el: '.demo-popup-swipe-handler',
           swipeToClose: 'to-bottom',
           swipeHandler: '.swipe-handler'
         });
+		
+		self.listIndex = app.listIndex.create({
+		  // ".list-index" element
+		  el: '.list-index',
+		  // List el where to look indexes and scroll for
+		  listEl: '.list',
+		  // Generate indexes automatically based on ".list-group-title" and ".item-divider"
+		  indexes: 'auto',
+		  // Scroll list on indexes click and touchmove
+		  scrollList: true,
+		  // Enable bubble label when swiping over indexes
+		  label: true,
+		});
+		app.methods.hideContactSearchAndNav();
 		
 		$(document).on("click", "#unlock", function(){
 			app.methods.unlock();
@@ -76,6 +101,12 @@ var app = new Framework7({
 		});
 		$(document).on("click", ".share", function(){
 			app.methods.share();
+		});
+		$(document).on("click", ".tab-link", function(){
+			app.methods.hideContactSearchAndNav();
+		});
+		$(document).on("click", "#tab-link-companies", function(){
+			app.methods.showContactSearchAndNav();
 		});
 	  },
 	},
