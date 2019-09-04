@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon" href="img/f7-icon-square.png">
   <link rel="icon" href="img/f7-icon.png">
 </head>
-<body>
+<body class="color-theme-deeporange theme-dark">
   <div id="app">
     <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
       <div class="page page-home">
@@ -68,10 +68,10 @@
 			</div>
 		</div>
 		<div class="list-index"></div>
-        <div class="page-content">
+        <div class="page page-content theme-dark">
 			<div class="tabs">
 				<div id="tab-Advert" class="tab tab-active">
-					<div class="card demo-card-header-pic">
+					<div class="card demo-card-header-pic elevation-4">
 					  <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg); height:55vh" valign="bottom" class="card-header">Journey To Mountains</div>
 					  <div class="card-content card-content-padding">
 						<p class="date">Posted on January 21, 2015</p>
@@ -114,7 +114,10 @@
 					</div>
 				</div>
 				<div id="tab-Goals" class="tab">
-					<div class="list media-list">
+					<div style="height:8vh; text-align:center;" class="block-title block-title-small">
+							Let us help you reach your goals
+					</div>
+					<div class="list media-list elevation-4">
 					  <ul>
 						<li>
 						  <div class="item-content">
@@ -133,7 +136,9 @@
 								</div>
 							  </div>
 							  <div class="item-text">
-								  <i class="icon f7-icons">compose</i>
+								  <a class="link icon-only" href="path/to/somewhere">
+									  <i class="icon f7-icons">compose</i>
+								  </a>
 								  Holidays & Getaways
 							  </div>
 							</div>
@@ -156,7 +161,9 @@
 								</div>
 							  </div>
 							  <div class="item-text">
-								  <i class="icon f7-icons">compose</i>
+								  <a class="link icon-only" href="path/to/somewhere">
+									  <i class="icon f7-icons">compose</i>
+								  </a>
 								  Property & Housing
 							  </div>
 							</div>
@@ -179,7 +186,9 @@
 								</div>
 							  </div>
 							  <div class="item-text">
-								  <i class="icon f7-icons">compose</i>
+								  <a class="link icon-only" href="path/to/somewhere">
+									  <i class="icon f7-icons">compose</i>
+								  </a>
 								  Education
 							  </div>
 							</div>
@@ -189,7 +198,7 @@
 					</div>
 				</div>
 				<div id="tab-Companies" class="tab">
-					<div class="card demo-card-header-pic">
+					<div class="card demo-card-header-pic elevation-4">
 					
 					<div class="searchbar-backdrop"></div>
 
@@ -862,12 +871,13 @@
 			<div class="swipe-handler"></div>
 			<div class="page-content">
 			  <div class="block block-strong">
-				<div class="card demo-card-header-pic">
+				
+				<div class="card demo-card-header-pic elevation-4">
 					<div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg); height:30vh" valign="bottom" class="card-header">
 					<span>Journey To Mountains</span>
 					</div>
 					<div class="card-content card-content-padding">
-						<p class="date">I help (insert ideal client) achieve (insert what you help them do) through (insert methodology)</p>
+						<p>I help (insert ideal client) achieve (insert what you help them do) through (insert methodology)</p>
 					</div>
 					<div class="card-footer" style="height: 55px;">
 						<div class="tabbar-labels">
@@ -877,7 +887,7 @@
 									<i class="icon material-icons md-only">email</i>
 									<span class="tabbar-label">Contact</span>
 								</a>
-								<a style="height: 55px;" class="link" href="#tab-2">
+								<a style="height: 55px;" class="link external link-active" href="#ratings">
 									<i class="icon f7-icons if-not-md">star_fill</i>
 									<i class="icon material-icons md-only">star</i>
 									<span class="tabbar-label">4/5</span>
@@ -892,14 +902,16 @@
 					</div>
 				</div>
 				
-				<div class="card">
+				<div class="block-title"></div>
+				<div class="card elevation-4">
 					<div class="card-header">Description</div>
 					<div class="card-content card-content-padding">
 						Card with header and footer. Card headers are used to display card titles and footers for additional information or just for custom actions.
 					</div>
 				</div>
 				
-				<div class="card">
+				<div class="block-title"></div>
+				<div class="card elevation-4">
 					<div class="card-header">Services</div>
 					<div class="card-content card-content-padding">
 						<div class="list media-list chevron-center">
@@ -932,7 +944,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="card">
+				
+				<div class="block-title"></div>
+				<div class="card elevation-4">
 					<div class="card-header">Operating Hours</div>
 					<div class="card-content card-content-padding">
 					  <div class="data-table">
@@ -977,12 +991,17 @@
 					  </div>
 					</div>
 				</div>
-				<div class="card">
+				
+				<div class="block-title"></div>
+				<div id="ratings" class="card elevation-4">
 					<div class="card-header">Ratings</div>
 					<div class="card-content card-content-padding">
 						Card with header and footer. Card headers are used to display card titles and footers for additional information or just for custom actions.
 					</div>
 				</div>
+				
+				<div class="block-title"></div>
+				
 			  </div>
 			</div>
 		  </div>
@@ -1015,12 +1034,6 @@
 						  </div>
 						</label>
 					</li>
-					<li class="item-content">
-					  <div class="item-inner">
-						<div class="item-title">Delivery</div>
-						<div class="item-after text-color-black"><b>$120</b></div>
-					  </div>
-					</li>
 				  </ul>
 				</div>
 				<div class="sheet-modal-swipe-step">
@@ -1033,54 +1046,6 @@
 					<div class="margin-top text-align-center">Terms and conditions apply</div>
 				  </div>
 				</div>
-			</div>
-		  </div>
-		</div>
-		
-		<div class="sheet-modal demo-sheet-swipe-to-step" style="height:auto">
-		  <div class="sheet-modal-inner">
-		  <a class="link sheet-close">Close</a>
-			<div class="swipe-handler" @click="toggleSwipeStep"></div>
-			<div class="sheet-modal-swipe-step">
-			  <div class="display-flex padding justify-content-space-between align-items-center">
-				<div style="font-size: 18px"><b>Total:</b></div>
-				<div style="font-size: 22px"><b>$500</b></div>
-			  </div>
-			  <div class="padding-horizontal padding-bottom">
-				<a class="button button-large button-fill">Order Service</a>
-				<div class="margin-top text-align-center">Swipe up for more details</div>
-			  </div>
-			</div>
-			<div class="block-title block-title-medium margin-top">Your order:</div>
-			<div class="list no-hairlines">
-			  <ul>
-				<li>
-					<label class="item-checkbox item-content">
-					  <input type="checkbox" name="demo-checkbox" value="Movies"/>
-					  <i class="icon icon-checkbox"></i>
-					  <div class="item-inner">
-						<div class="item-title">Item 1</div>
-						<div class="item-after text-color-black"><b>$200</b></div>
-					  </div>
-					</label>
-				</li>
-				<li>
-					<label class="item-checkbox item-content">
-					  <input type="checkbox" name="demo-checkbox" value="Movies"/>
-					  <i class="icon icon-checkbox"></i>
-					  <div class="item-inner">
-						<div class="item-title">Item 2</div>
-						<div class="item-after text-color-black"><b>$200</b></div>
-					  </div>
-					</label>
-				</li>
-				<li class="item-content">
-				  <div class="item-inner">
-					<div class="item-title">Delivery</div>
-					<div class="item-after text-color-black"><b>$120</b></div>
-				  </div>
-				</li>
-			  </ul>
 			</div>
 		  </div>
 		</div>
