@@ -82,6 +82,9 @@
 	
 	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	
+	<gap:plugin  name="cordova-plugin-navigationbar-color" source="npm" /> 
+	<preference name="NavigationBarBackgroundColor" value="#000000" />
+	
 	<preference name="phonegap-version" value="cli-9.0.0" />
 
 	<preference name="android-build-tool" value="gradle" />
