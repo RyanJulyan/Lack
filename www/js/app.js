@@ -71,13 +71,31 @@ var app = new Framework7({
 	  pageInit: function () {
 		var self = this;
 		var app = self;
-
 		
         self.popupSwipeHandler = self.popup.create({
-          el: '.demo-popup-swipe-handler',
+          el: '#advert-details',
           swipeToClose: 'to-bottom',
           swipeHandler: '.swipe-handler'
         });
+		
+        self.popupSwipeHandler = self.popup.create({
+          el: '#company-details',
+          swipeToClose: 'to-bottom',
+          swipeHandler: '.swipe-handler'
+        });
+		
+        self.popupSwipeHandler = self.popup.create({
+          el: '#services-details',
+          swipeToClose: 'to-bottom',
+          swipeHandler: '.swipe-handler'
+        });
+		
+		// self.sheetSwipeToStep = self.popup.create({
+		  // el: '.demo-sheet-swipe-to-step',
+          // swipeToClose: 'to-bottom',
+          // swipeHandler: '.swipe-handler',
+		  // backdrop: true,
+		// });
 		
 		self.listIndex = app.listIndex.create({
 		  // ".list-index" element

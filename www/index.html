@@ -50,9 +50,9 @@
 			</div>
 			  <div class="subnavbar">
 				<p class="segmented">
-					<button class="button">2.5c</button>
-					<button class="button">5c</button>
-					<button class="button">R1</button>
+					<button class="button sheet-open" data-sheet=".demo-sheet-top">2.5c</button>
+					<button class="button sheet-open" data-sheet=".demo-sheet-top">5c</button>
+					<button class="button sheet-open" data-sheet=".demo-sheet-top">R1</button>
 				</p>
 				<form data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init" style="display: none;">
 				  <div class="searchbar-inner">
@@ -817,11 +817,30 @@
 				</div>
 			</div>
         </div>
+		
+		<!--sheet modal top-->
+		<div class="sheet-modal sheet-modal-top demo-sheet-top">
+		  <div class="toolbar toolbar-bottom">
+			<div class="toolbar-inner">
+			  <div class="left"></div>
+			  <div class="right">
+				<a class="link sheet-close">Close</a>
+			  </div>
+			</div>
+		  </div>
+		  <div class="sheet-modal-inner">
+			<div class="page-content">
+			  <div class="block">
+				<p>Earn Extra Daily</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
 		<div id="advert-details" class="popup demo-popup-swipe-handler">
 		  <div class="page">
 			<div class="swipe-handler"></div>
 			<div class="page-content">
-			  <div class="block-title block-title-large">Interested?</div>
 			  <div class="block block-strong">
 				<div class="card demo-card-header-pic">
 				  <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg); height:55vh" valign="bottom" class="card-header">Journey To Mountains</div>
@@ -837,11 +856,11 @@
 			</div>
 		  </div>
 		</div>
+		
 		<div id="company-details" class="popup demo-popup-swipe-handler">
 		  <div class="page">
 			<div class="swipe-handler"></div>
 			<div class="page-content">
-			  <div class="block-title block-title-large">Company Profile</div>
 			  <div class="block block-strong">
 				<div class="card demo-card-header-pic">
 					<div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg); height:30vh" valign="bottom" class="card-header">
@@ -859,9 +878,9 @@
 									<span class="tabbar-label">Contact</span>
 								</a>
 								<a style="height: 55px;" class="link" href="#tab-2">
-									<i class="icon f7-icons if-not-md">calendar_fill</i>
-									<i class="icon material-icons md-only">today</i>
-									<span class="tabbar-label">Calendar</span>
+									<i class="icon f7-icons if-not-md">star_fill</i>
+									<i class="icon material-icons md-only">star</i>
+									<span class="tabbar-label">4/5</span>
 								</a>
 								<a style="height: 55px;" class="link" href="#tab-3">
 									<i class="icon f7-icons if-not-md">more_vertical_fill</i>
@@ -872,19 +891,21 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="card">
 					<div class="card-header">Description</div>
 					<div class="card-content card-content-padding">
 						Card with header and footer. Card headers are used to display card titles and footers for additional information or just for custom actions.
 					</div>
 				</div>
+				
 				<div class="card">
 					<div class="card-header">Services</div>
 					<div class="card-content card-content-padding">
 						<div class="list media-list chevron-center">
 						  <ul>
 							<li>
-							  <a href="#" class="item-link item-content">
+							  <a href="#" class="item-link item-content popup-open" data-popup="#services-details">
 								<div class="item-inner">
 								  <div class="item-title-row">
 									<div class="item-title">Facebook</div>
@@ -956,10 +977,114 @@
 					  </div>
 					</div>
 				</div>
+				<div class="card">
+					<div class="card-header">Ratings</div>
+					<div class="card-content card-content-padding">
+						Card with header and footer. Card headers are used to display card titles and footers for additional information or just for custom actions.
+					</div>
+				</div>
 			  </div>
 			</div>
 		  </div>
 		</div>
+		
+		<div id="services-details" class="popup demo-popup-swipe-handler">
+		  <div class="page">
+			<div class="swipe-handler"></div>
+			<div class="page-content">
+				<div class="block-title block-title-medium margin-top">Your order:</div>
+				<div class="list no-hairlines">
+				  <ul>
+					<li>
+						<label class="item-checkbox item-content">
+						  <input type="checkbox" name="demo-checkbox" value="Movies"/>
+						  <i class="icon icon-checkbox"></i>
+						  <div class="item-inner">
+							<div class="item-title">Item 1</div>
+							<div class="item-after text-color-black"><b>$200</b></div>
+						  </div>
+						</label>
+					</li>
+					<li>
+						<label class="item-checkbox item-content">
+						  <input type="checkbox" name="demo-checkbox" value="Movies"/>
+						  <i class="icon icon-checkbox"></i>
+						  <div class="item-inner">
+							<div class="item-title">Item 2</div>
+							<div class="item-after text-color-black"><b>$200</b></div>
+						  </div>
+						</label>
+					</li>
+					<li class="item-content">
+					  <div class="item-inner">
+						<div class="item-title">Delivery</div>
+						<div class="item-after text-color-black"><b>$120</b></div>
+					  </div>
+					</li>
+				  </ul>
+				</div>
+				<div class="sheet-modal-swipe-step">
+				  <div class="display-flex padding justify-content-space-between align-items-center">
+					<div style="font-size: 18px"><b>Total:</b></div>
+					<div style="font-size: 22px"><b>$500</b></div>
+				  </div>
+				  <div class="padding-horizontal padding-bottom">
+					<a class="button button-large button-fill">Request Service</a>
+					<div class="margin-top text-align-center">Terms and conditions apply</div>
+				  </div>
+				</div>
+			</div>
+		  </div>
+		</div>
+		
+		<div class="sheet-modal demo-sheet-swipe-to-step" style="height:auto">
+		  <div class="sheet-modal-inner">
+		  <a class="link sheet-close">Close</a>
+			<div class="swipe-handler" @click="toggleSwipeStep"></div>
+			<div class="sheet-modal-swipe-step">
+			  <div class="display-flex padding justify-content-space-between align-items-center">
+				<div style="font-size: 18px"><b>Total:</b></div>
+				<div style="font-size: 22px"><b>$500</b></div>
+			  </div>
+			  <div class="padding-horizontal padding-bottom">
+				<a class="button button-large button-fill">Order Service</a>
+				<div class="margin-top text-align-center">Swipe up for more details</div>
+			  </div>
+			</div>
+			<div class="block-title block-title-medium margin-top">Your order:</div>
+			<div class="list no-hairlines">
+			  <ul>
+				<li>
+					<label class="item-checkbox item-content">
+					  <input type="checkbox" name="demo-checkbox" value="Movies"/>
+					  <i class="icon icon-checkbox"></i>
+					  <div class="item-inner">
+						<div class="item-title">Item 1</div>
+						<div class="item-after text-color-black"><b>$200</b></div>
+					  </div>
+					</label>
+				</li>
+				<li>
+					<label class="item-checkbox item-content">
+					  <input type="checkbox" name="demo-checkbox" value="Movies"/>
+					  <i class="icon icon-checkbox"></i>
+					  <div class="item-inner">
+						<div class="item-title">Item 2</div>
+						<div class="item-after text-color-black"><b>$200</b></div>
+					  </div>
+					</label>
+				</li>
+				<li class="item-content">
+				  <div class="item-inner">
+					<div class="item-title">Delivery</div>
+					<div class="item-after text-color-black"><b>$120</b></div>
+				  </div>
+				</li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+		
       </div>
     </div>
   </div>
