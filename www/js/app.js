@@ -102,7 +102,7 @@ var app = new Framework7({
           cols: [
             {
               textAlign: 'center',
-              values: [ 'Appliances','Baby','Beauty','Books','Cameras','Camping & Outdoor','Cellphones & Accessories','Community','Computers & Tablets','Date Night','DIY & Auto','Entrepreneurship','Environment','Food','Furniture & Tables','Gaming','Garden, Pool & Patio','Health','Holidays & Getaways','Homeware & Kitchen','IT','Language','Laptops & Accessories','Legal & Law','Liquor & Soft Drinks','Luggage & Travel','Management','Marketing & Sales','Medical & Health ','Movies & Series','Music','Office & Stationery','Pets','Property & Housing','Recreation','Research','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual']
+              values: [ 'Appliances','Baby','Beauty','Books','Cameras','Camping & Outdoor','Cellphones & Accessories','Community','Computers & Tablets','Date Night','DIY & Auto','Entrepreneurship','Environment','Food','Furniture & Tables','Gaming','Garden, Pool & Patio','Health','Holidays & Getaways','Homeware & Kitchen','IT','Language','Laptops & Accessories','Legal & Law','Liquor & Soft Drinks','Luggage & Travel','Management','Marketing & Sales','Medical & Health ','Movies & Series','Music','Office & Stationery','Pets','Property & Housing','Recreation','Research','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual','Other']
             }
           ]
         });
