@@ -90,12 +90,22 @@ var app = new Framework7({
           swipeHandler: '.swipe-handler'
         });
 		
-		// self.sheetSwipeToStep = self.popup.create({
-		  // el: '.demo-sheet-swipe-to-step',
-          // swipeToClose: 'to-bottom',
-          // swipeHandler: '.swipe-handler',
-		  // backdrop: true,
-		// });
+        self.popupSwipeHandler = self.popup.create({
+          el: '#goal-details',
+          swipeToClose: 'to-bottom',
+          swipeHandler: '.swipe-handler'
+        });
+		
+		
+        self.pickerDevice = app.picker.create({
+          inputEl: '#demo-picker-category',
+          cols: [
+            {
+              textAlign: 'center',
+              values: [ 'Appliances','Baby','Beauty','Books','Cameras','Camping & Outdoor','Cellphones & Accessories','Community','Computers & Tablets','Date Night','DIY & Auto','Entrepreneurship','Environment','Food','Furniture & Tables','Gaming','Garden, Pool & Patio','Health','Holidays & Getaways','Homeware & Kitchen','IT','Language','Laptops & Accessories','Legal & Law','Liquor & Soft Drinks','Luggage & Travel','Management','Marketing & Sales','Medical & Health ','Movies & Series','Music','Office & Stationery','Pets','Property & Housing','Recreation','Research','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual']
+            }
+          ]
+        });
 		
 		self.listIndex = app.listIndex.create({
 		  // ".list-index" element

@@ -136,7 +136,7 @@
 								</div>
 							  </div>
 							  <div class="item-text">
-								  <a class="link icon-only" href="path/to/somewhere">
+								  <a class="link icon-only popup-open" data-popup="#goal-details" href="#">
 									  <i class="icon f7-icons">compose</i>
 								  </a>
 								  Holidays & Getaways
@@ -161,7 +161,7 @@
 								</div>
 							  </div>
 							  <div class="item-text">
-								  <a class="link icon-only" href="path/to/somewhere">
+								  <a class="link icon-only popup-open" data-popup="#goal-details" href="#">
 									  <i class="icon f7-icons">compose</i>
 								  </a>
 								  Property & Housing
@@ -186,7 +186,7 @@
 								</div>
 							  </div>
 							  <div class="item-text">
-								  <a class="link icon-only" href="path/to/somewhere">
+								  <a class="link icon-only popup-open" data-popup="#goal-details" href="#">
 									  <i class="icon f7-icons">compose</i>
 								  </a>
 								  Education
@@ -1045,6 +1045,46 @@
 					<a class="button button-large button-fill">Request Service</a>
 					<div class="margin-top text-align-center">Terms and conditions apply</div>
 				  </div>
+				</div>
+			</div>
+		  </div>
+		</div>
+		
+		<div id="goal-details" class="popup demo-popup-swipe-handler">
+		  <div class="page">
+			<div class="swipe-handler"></div>
+			<div class="page-content">
+				<div class="block-title block-title-medium margin-top">Personal</div>
+				<div class="block-title block-title-small margin-top">What do you want, How much is it?</div>
+				<div class="list no-hairlines-md">
+					<ul>
+						<li>
+							<div class="item-content item-input">
+							  <div class="item-inner">
+								<div class="item-input-wrap">
+								  <input type="text" placeholder="Select Goal Category" readonly="readonly" id="demo-picker-category"/>
+								</div>
+							  </div>
+							</div>
+						</li>
+						<li class="item-content item-input item-input-with-info">
+							<div class="item-inner">
+								<div class="item-title item-floating-label">Total Goal Amount</div>
+								<div class="item-input-wrap">
+								  <input type="text" placeholder="Total Goal Amount" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
+								  <span class="input-clear-button"></span>
+								  <div class="item-input-info">In South African Rands (ZAR)</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="block block-strong">
+								<p>
+									<a href="" class="button button-fill popup-close">Save Goal</a>
+								</p>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		  </div>
