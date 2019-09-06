@@ -52,15 +52,25 @@ var app = new Framework7({
 
 		window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
       },
+      hidePromotionNav: function () {
+		$('.promotion-nav').hide();
+      },
+      showPromotionNav: function () {
+		$('.promotion-nav').show();
+      },
       hideContactSearchAndNav: function () {
 		$('.searchbar').hide();
 		$('.list-index').hide();
-		$('.segmented').show();
       },
       showContactSearchAndNav: function () {
-		$('.segmented').hide();
 		$('.searchbar').show();
 		$('.list-index').show();
+      },
+      hideProfileNav: function () {
+		$('.profile-nav').hide();
+      },
+      showProfileNav: function () {
+		$('.profile-nav').show();
       },
   },
 	on: {
@@ -119,7 +129,9 @@ var app = new Framework7({
 		  // Enable bubble label when swiping over indexes
 		  label: true,
 		});
+		
 		app.methods.hideContactSearchAndNav();
+		app.methods.hideProfileNav();
 		
 		$(document).on("click", "#unlock", function(){
 			app.methods.unlock();
@@ -132,9 +144,20 @@ var app = new Framework7({
 		});
 		$(document).on("click", ".tab-link", function(){
 			app.methods.hideContactSearchAndNav();
+			app.methods.hideProfileNav();
+			app.methods.hidePromotionNav();
+		});
+		$(document).on("click", "#tab-link-advert", function(){
+			app.methods.showPromotionNav();
+		});
+		$(document).on("click", "#tab-link-goals", function(){
+			app.methods.showPromotionNav();
 		});
 		$(document).on("click", "#tab-link-companies", function(){
 			app.methods.showContactSearchAndNav();
+		});
+		$(document).on("click", "#tab-link-profile", function(){
+			app.methods.showProfileNav();
 		});
 	  },
 	},

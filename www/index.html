@@ -26,12 +26,12 @@
 		<div class="navbar-inner sliding"-->
 			<div class="toolbar tabbar tabbar-labels toolbar-bottom">
 			  <div class="toolbar-inner">
-				<a href="#tab-Advert" class="tab-link tab-link-active">
+				<a href="#tab-Advert" id="tab-link-advert" class="tab-link tab-link-active">
 				  <i class="icon f7-icons if-not-md">phone_portrait</i>
 				  <i class="icon material-icons md-only">phone_iphone</i>
 				  <span class="tabbar-label">Advert</span>
 				</a>
-				<a href="#tab-Goals" class="tab-link">
+				<a href="#tab-Goals" id="tab-link-goals" class="tab-link">
 				  <i class="icon f7-icons if-not-md">money_dollar_round_fill</i>
 				  <i class="icon material-icons md-only">monetization_on</i>
 				  <span class="tabbar-label">Goals</span>
@@ -41,7 +41,7 @@
 				  <i class="icon material-icons md-only">business</i>
 				  <span class="tabbar-label">Companies</span>
 				</a>
-				<a href="#tab-3" class="tab-link">
+				<a href="#tab-Profile" id="tab-link-profile" class="tab-link">
 				  <i class="icon f7-icons if-not-md">person_round</i>
 				  <i class="icon material-icons md-only">account_circle</i>
 				  <span class="tabbar-label">Profile</span>
@@ -49,7 +49,19 @@
 			  </div>
 			</div>
 			  <div class="subnavbar">
-				<p class="segmented">
+				<p class="segmented profile-nav">
+					<button class="button sheet-open" data-sheet=".demo-sheet-top">
+						<i class="icon f7-icons">sort_up</i>
+					</button>
+					<button class="button sheet-open" data-sheet=".demo-sheet-top">
+						<i class="icon material-icons">bubble_chart</i>
+					</button>
+					<button class="button sheet-open" data-sheet=".demo-sheet-top">
+						<i class="icon f7-icons if-not-md">settings</i>
+						<i class="icon material-icons md-only">settings</i>
+					</button>
+				</p>
+				<p class="segmented promotion-nav">
 					<button class="button sheet-open" data-sheet=".demo-sheet-top">2.5c</button>
 					<button class="button sheet-open" data-sheet=".demo-sheet-top">5c</button>
 					<button class="button sheet-open" data-sheet=".demo-sheet-top">R1</button>
@@ -823,7 +835,142 @@
 						</div>
 					</div>
 					</div>
+					
+					<div class="block-title"></div>
+					<div class="block-title"></div>
+					<div class="block-title"></div>
+					
 				</div>
+				<div id="tab-Profile" class="tab">
+				
+					<div class="display-flex padding justify-content-space-between align-items-center">
+						<div style="font-size: 18px"><b>Total:</b></div>
+						<div style="font-size: 22px"><b>R30</b></div>
+					</div>
+					<div style="text-align:center;" class="block-title-small">
+							Earn From Every Active User You Invited
+					</div>
+					<div class="list simple-list elevation-4">
+					  <ul>
+						<li>
+						  <div class="item-inner">
+							<div class="item-title">Friend 1</div>
+							<div class="item-after text-color-black"><b>R10</b></div>
+						  </div>
+						</li>
+						<li>
+						  <div class="item-inner">
+							<div class="item-title">Friend 2</div>
+							<div class="item-after text-color-black"><b>R10</b></div>
+						  </div>
+						</li>
+						<li>
+						  <div class="item-inner">
+							<div class="item-title">Friend 3</div>
+							<div class="item-after text-color-black"><b>R10</b></div>
+						  </div>
+						</li>
+						<li class="item-divider">
+							<i style="color: #4cd964;" class="icon f7-icons if-not-md">arrow_up</i>
+							<i style="color: #4cd964;" class="icon material-icons md-only">arrow_upward</i>
+							<span style="color: #4cd964">This Month Active Users </span>
+							<i style="color: #4cd964;" class="icon f7-icons if-not-md">arrow_up</i>
+							<i style="color: #4cd964;" class="icon material-icons md-only">arrow_upward</i>
+						</li>
+						<li>
+						  <div class="item-inner">
+							<div class="item-title">Friend 4</div>
+							<div class="item-after text-color-black"><b>R10</b></div>
+						  </div>
+						</li>
+					  </ul>
+					</div>
+					<div class="list media-list elevation-4">
+					  <ul>
+						<li>
+						  <div class="item-content">
+							<div class="item-media">
+								<i style="color: #2196f3; width:100%; font-size: 50px;" class="icon f7-icons if-not-md">person_round_fill</i>
+								<i style="color: #2196f3; width:100%; font-size: 50px;" class="icon material-icons md-only">account_circle</i>
+							</div>
+							<div class="item-inner">
+							  <div class="item-title-row">
+								<div class="item-title">Personal</div>
+								<div class="item-after">R220000</div>
+							  </div>
+							  <div class="item-subtitle">
+								<div style="height: 10px;" class="progressbar color-blue" data-progress="80">
+									<span style="transform: translate3d(-20%, 0px, 0px);"></span>
+								</div>
+							  </div>
+							  <div class="item-text">
+								  <a class="link icon-only popup-open" data-popup="#goal-details" href="#">
+									  <i class="icon f7-icons">compose</i>
+								  </a>
+								  Holidays & Getaways
+							  </div>
+							</div>
+						  </div>
+						</li>
+						<li>
+						  <div class="item-content">
+							<div class="item-media">
+							  <i style="color: #4cd964; width:100%; font-size: 50px;" class="icon f7-icons if-not-md" color="green">bars_chart_square_fill</i>
+							  <i style="color: #4cd964; width:100%; font-size: 50px;" class="icon material-icons md-only">insert_chart</i>
+							</div>
+							<div class="item-inner">
+							  <div class="item-title-row">
+								<div class="item-title">Financial</div>
+								<div class="item-after">R60000000</div>
+							  </div>
+							  <div class="item-subtitle">
+								<div style="height: 10px;" class="progressbar color-green" data-progress="60">
+									<span style="transform: translate3d(-20%, 0px, 0px);"></span>
+								</div>
+							  </div>
+							  <div class="item-text">
+								  <a class="link icon-only popup-open" data-popup="#goal-details" href="#">
+									  <i class="icon f7-icons">compose</i>
+								  </a>
+								  Property & Housing
+							  </div>
+							</div>
+						  </div>
+						</li>
+						<li>
+						  <div class="item-content">
+							<div class="item-media">
+							  <i style="color: #ff3b30; width:100%; font-size: 50px;" class="icon f7-icons if-not-md">persons</i>
+							  <i style="color: #ff3b30; width:100%; font-size: 50px;" class="icon material-icons md-only">group</i>
+							</div>
+							<div class="item-inner">
+							  <div class="item-title-row">
+								<div class="item-title">Relationships</div>
+								<div class="item-after">R1600000</div>
+							  </div>
+							  <div class="item-subtitle">
+								<div style="height: 10px;" class="progressbar color-red" data-progress="30">
+									<span style="transform: translate3d(-20%, 0px, 0px);"></span>
+								</div>
+							  </div>
+							  <div class="item-text">
+								  <a class="link icon-only popup-open" data-popup="#goal-details" href="#">
+									  <i class="icon f7-icons">compose</i>
+								  </a>
+								  Education
+							  </div>
+							</div>
+						  </div>
+						</li>
+					  </ul>
+					</div>
+					
+					<div class="block-title"></div>
+					<div class="block-title"></div>
+					<div class="block-title"></div>
+					
+				</div>
+				
 			</div>
         </div>
 		
@@ -888,8 +1035,8 @@
 									<span class="tabbar-label">Contact</span>
 								</a>
 								<a style="height: 55px;" class="link external link-active" href="#ratings">
-									<i class="icon f7-icons if-not-md">star_fill</i>
-									<i class="icon material-icons md-only">star</i>
+									<i class="icon f7-icons if-not-md color-yellow">star_fill</i>
+									<i class="icon material-icons md-only color-yellow">star</i>
 									<span class="tabbar-label">4/5</span>
 								</a>
 								<a style="height: 55px;" class="link" href="#tab-3">
@@ -904,7 +1051,7 @@
 				
 				<div class="block-title"></div>
 				<div class="card elevation-4">
-					<div class="card-header">Description</div>
+					<div class="card-header bg-color-lightblue text-color-white padding-vertical">Description</div>
 					<div class="card-content card-content-padding">
 						Card with header and footer. Card headers are used to display card titles and footers for additional information or just for custom actions.
 					</div>
@@ -912,7 +1059,7 @@
 				
 				<div class="block-title"></div>
 				<div class="card elevation-4">
-					<div class="card-header">Services</div>
+					<div class="card-header bg-color-deeporange text-color-white padding-vertical">Services</div>
 					<div class="card-content card-content-padding">
 						<div class="list media-list chevron-center">
 						  <ul>
@@ -947,7 +1094,7 @@
 				
 				<div class="block-title"></div>
 				<div class="card elevation-4">
-					<div class="card-header">Operating Hours</div>
+					<div class="card-header bg-color-green text-color-white padding-vertical">Operating Hours</div>
 					<div class="card-content card-content-padding">
 					  <div class="data-table">
 						<table>
@@ -994,13 +1141,11 @@
 				
 				<div class="block-title"></div>
 				<div id="ratings" class="card elevation-4">
-					<div class="card-header">Ratings</div>
+					<div class="card-header bg-color-yellow text-color-white padding-vertical">Ratings</div>
 					<div class="card-content card-content-padding">
 						Card with header and footer. Card headers are used to display card titles and footers for additional information or just for custom actions.
 					</div>
 				</div>
-				
-				<div class="block-title"></div>
 				
 			  </div>
 			</div>
@@ -1020,7 +1165,7 @@
 						  <i class="icon icon-checkbox"></i>
 						  <div class="item-inner">
 							<div class="item-title">Item 1</div>
-							<div class="item-after text-color-black"><b>$200</b></div>
+							<div class="item-after text-color-black"><b>R200</b></div>
 						  </div>
 						</label>
 					</li>
@@ -1030,7 +1175,7 @@
 						  <i class="icon icon-checkbox"></i>
 						  <div class="item-inner">
 							<div class="item-title">Item 2</div>
-							<div class="item-after text-color-black"><b>$200</b></div>
+							<div class="item-after text-color-black"><b>R200</b></div>
 						  </div>
 						</label>
 					</li>
@@ -1039,7 +1184,7 @@
 				<div class="sheet-modal-swipe-step">
 				  <div class="display-flex padding justify-content-space-between align-items-center">
 					<div style="font-size: 18px"><b>Total:</b></div>
-					<div style="font-size: 22px"><b>$500</b></div>
+					<div style="font-size: 22px"><b>R500</b></div>
 				  </div>
 				  <div class="padding-horizontal padding-bottom">
 					<a class="button button-large button-fill">Request Service</a>
@@ -1071,7 +1216,7 @@
 							<div class="item-inner">
 								<div class="item-title item-floating-label">Total Goal Amount</div>
 								<div class="item-input-wrap">
-								  <input type="text" placeholder="Total Goal Amount" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
+								  <input type="number" placeholder="Total Goal Amount" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
 								  <span class="input-clear-button"></span>
 								  <div class="item-input-info">In South African Rands (ZAR)</div>
 								</div>
