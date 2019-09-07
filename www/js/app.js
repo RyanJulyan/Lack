@@ -121,7 +121,7 @@ var app = new Framework7({
 		  // ".list-index" element
 		  el: '.list-index',
 		  // List el where to look indexes and scroll for
-		  listEl: '.list',
+		  listEl: '.companies-list',
 		  // Generate indexes automatically based on ".list-group-title" and ".item-divider"
 		  indexes: 'auto',
 		  // Scroll list on indexes click and touchmove
