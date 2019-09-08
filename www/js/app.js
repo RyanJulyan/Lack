@@ -106,6 +106,12 @@ var app = new Framework7({
           swipeHandler: '.swipe-handler'
         });
 		
+        self.popupSwipeHandler = self.popup.create({
+          el: '#company-contact',
+          swipeToClose: 'to-bottom',
+          swipeHandler: '.swipe-handler'
+        });
+		
 		
         self.pickerDevice = app.picker.create({
           inputEl: '#demo-picker-category',
@@ -142,7 +148,11 @@ var app = new Framework7({
 		$(document).on("click", ".share", function(){
 			app.methods.share();
 		});
-		$(document).on("click", ".tab-link", function(){
+		$(document).on("click", "#SendEmail", function(){
+			app.popup.close('#company-contact');
+		});
+		
+		$(document).on("click", ".tab-link-main-nav", function(){
 			app.methods.hideContactSearchAndNav();
 			app.methods.hideProfileNav();
 			app.methods.hidePromotionNav();
