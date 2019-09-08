@@ -653,3 +653,7 @@ code {
 :root:not(.theme-dark) .page-about {
   --f7-page-bg-color: #fff;
 }
+
+.page-content {
+  scroll-behavior: smooth !important;
+}
