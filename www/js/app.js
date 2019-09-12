@@ -106,7 +106,7 @@ var app = new Framework7({
           swipeHandler: '.swipe-handler'
         });
 		
-        self.popupSwipeHandler = self.popup.create({
+        self.goalPersonalDetailsPopupSwipeHandler = self.popup.create({
           el: '#goal-personal-details',
           swipeToClose: 'to-bottom',
           swipeHandler: '.swipe-handler'
