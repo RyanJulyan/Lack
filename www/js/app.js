@@ -95,30 +95,68 @@ var app = new Framework7({
         });
 		
         self.popupSwipeHandler = self.popup.create({
+          el: '#company-contact',
+          swipeToClose: 'to-bottom',
+          swipeHandler: '.swipe-handler'
+        });
+		
+        self.popupSwipeHandler = self.popup.create({
           el: '#services-details',
           swipeToClose: 'to-bottom',
           swipeHandler: '.swipe-handler'
         });
 		
         self.popupSwipeHandler = self.popup.create({
-          el: '#goal-details',
+          el: '#goal-personal-details',
           swipeToClose: 'to-bottom',
           swipeHandler: '.swipe-handler'
         });
 		
         self.popupSwipeHandler = self.popup.create({
-          el: '#company-contact',
+          el: '#goal-financial-details',
+          swipeToClose: 'to-bottom',
+          swipeHandler: '.swipe-handler'
+        });
+		
+        self.popupSwipeHandler = self.popup.create({
+          el: '#goal-relationship-details',
+          swipeToClose: 'to-bottom',
+          swipeHandler: '.swipe-handler'
+        });
+		
+        self.popupSwipeHandler = self.popup.create({
+          el: '#profile-invite-friends',
           swipeToClose: 'to-bottom',
           swipeHandler: '.swipe-handler'
         });
 		
 		
         self.pickerDevice = app.picker.create({
-          inputEl: '#demo-picker-category',
+          inputEl: '#personal-category',
           cols: [
             {
               textAlign: 'center',
-              values: [ 'Appliances','Baby','Beauty','Books','Cameras','Camping & Outdoor','Cellphones & Accessories','Community','Computers & Tablets','Date Night','DIY & Auto','Entrepreneurship','Environment','Food','Furniture & Tables','Gaming','Garden, Pool & Patio','Health','Holidays & Getaways','Homeware & Kitchen','IT','Language','Laptops & Accessories','Legal & Law','Liquor & Soft Drinks','Luggage & Travel','Management','Marketing & Sales','Medical & Health ','Movies & Series','Music','Office & Stationery','Pets','Property & Housing','Recreation','Research','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual','Other']
+              values: [ 'Appliances','Baby','Beauty','Books','Cameras','Camping & Outdoor','Cellphones & Accessories','Community','Computers & Tablets','DIY & Auto','Food','Furniture & Tables','Gaming','Garden, Pool & Patio','Holidays & Getaways','Homeware & Kitchen','Laptops & Accessories','Liquor & Soft Drinks','Luggage & Travel','Medical & Health','Movies & Series','Music','Pets','Property & Housing','Recreation','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual','Other']
+            }
+          ]
+        });
+		
+        self.pickerDevice = app.picker.create({
+          inputEl: '#financial-category',
+          cols: [
+            {
+              textAlign: 'center',
+              values: [ 'Computers & Tablets','Entrepreneurship','Environment','Furniture & Tables','Homeware & Kitchen','IT','Laptops & Accessories','Legal & Law','Management','Marketing & Sales','Medical & Health','Office & Stationery','Property','Research','Other']
+            }
+          ]
+        });
+		
+        self.pickerDevice = app.picker.create({
+          inputEl: '#relationship-category',
+          cols: [
+            {
+              textAlign: 'center',
+              values: [ 'Baby','Date Night','Furniture & Tables','Hobbies','Holidays & Getaways','Homeware & Kitchen','Medical & Health','Pets','Property & Housing','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual','Other']
             }
           ]
         });

@@ -161,7 +161,7 @@
 								</div>
 							  </div>
 							  <div class="item-text">
-								  <a class="link icon-only popup-open" data-popup="#goal-details" href="#">
+								  <a class="link icon-only popup-open" data-popup="#goal-personal-details" href="#">
 									  <i class="icon f7-icons">compose</i>
 								  </a>
 								  Holidays & Getaways
@@ -186,7 +186,7 @@
 								</div>
 							  </div>
 							  <div class="item-text">
-								  <a class="link icon-only popup-open" data-popup="#goal-details" href="#">
+								  <a class="link icon-only popup-open" data-popup="#goal-financial-details" href="#">
 									  <i class="icon f7-icons">compose</i>
 								  </a>
 								  Property & Housing
@@ -211,7 +211,7 @@
 								</div>
 							  </div>
 							  <div class="item-text">
-								  <a class="link icon-only popup-open" data-popup="#goal-details" href="#">
+								  <a class="link icon-only popup-open" data-popup="#goal-relationship-details" href="#">
 									  <i class="icon f7-icons">compose</i>
 								  </a>
 								  Education
@@ -1505,7 +1505,7 @@
 		  </div>
 		</div>
 		
-		<div id="goal-details" class="popup demo-popup-swipe-handler">
+		<div id="goal-personal-details" class="popup demo-popup-swipe-handler">
 		  <div class="page">
 			<div class="swipe-handler"></div>
 			<div class="page-content">
@@ -1518,29 +1518,102 @@
 							  <div class="item-inner">
 								<div class="item-title item-floating-label">Select Goal Category</div>
 								<div class="item-input-wrap">
-								  <input type="text" placeholder="Select Goal Category" readonly="readonly" id="demo-picker-category"/>
+								  <input type="text" placeholder="Select Goal Category" id="personal-category"/>
 								</div>
 							  </div>
 							</div>
 						</li>
-						<li class="item-content item-input item-input-with-info">
-							<div class="item-inner">
+						<li>
+							<div class="item-content item-input">
+							  <div class="item-inner">
 								<div class="item-title item-floating-label">Total Goal Amount</div>
 								<div class="item-input-wrap">
-								  <input type="number" placeholder="Total Goal Amount" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
-								  <span class="input-clear-button"></span>
-								  <div class="item-input-info">In South African Rands (ZAR)</div>
+								  <input type="number" placeholder="Total Goal Amount"/>
 								</div>
+							  </div>
 							</div>
 						</li>
-						<li class="item-content item-input">
-						  <div class="item-inner">
-							<div class="item-title item-label item-floating-label">To</div>
-							<div class="item-input-wrap">
-							  <input type="email" placeholder="To" required validate>
-							  <span class="input-clear-button"></span>
+						<li>
+							<div class="block block-strong">
+								<p>
+									<a href="" class="button button-fill popup-close">Save Goal</a>
+								</p>
 							</div>
-						  </div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		  </div>
+		</div>
+		
+		<div id="goal-financial-details" class="popup demo-popup-swipe-handler">
+		  <div class="page">
+			<div class="swipe-handler"></div>
+			<div class="page-content">
+				<div class="block-title block-title-medium margin-top">Financial</div>
+				<div class="block-title block-title-small margin-top">What do you want, How much is it?</div>
+				<div class="list no-hairlines-md">
+					<ul>
+						<li>
+							<div class="item-content item-input">
+							  <div class="item-inner">
+								<div class="item-title item-floating-label">Select Goal Category</div>
+								<div class="item-input-wrap">
+								  <input type="text" placeholder="Select Goal Category" id="financial-category"/>
+								</div>
+							  </div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content item-input">
+							  <div class="item-inner">
+								<div class="item-title item-floating-label">Total Goal Amount</div>
+								<div class="item-input-wrap">
+								  <input type="number" placeholder="Total Goal Amount"/>
+								</div>
+							  </div>
+							</div>
+						</li>
+						<li>
+							<div class="block block-strong">
+								<p>
+									<a href="" class="button button-fill popup-close">Save Goal</a>
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		  </div>
+		</div>
+		
+		<div id="goal-relationship-details" class="popup demo-popup-swipe-handler">
+		  <div class="page">
+			<div class="swipe-handler"></div>
+			<div class="page-content">
+				<div class="block-title block-title-medium margin-top">Relationships</div>
+				<div class="block-title block-title-small margin-top">What do you want, How much is it?</div>
+				<div class="list no-hairlines-md">
+					<ul>
+						<li>
+							<div class="item-content item-input">
+							  <div class="item-inner">
+								<div class="item-title item-floating-label">Select Goal Category</div>
+								<div class="item-input-wrap">
+								  <input type="text" placeholder="Select Goal Category" id="relationship-category"/>
+								</div>
+							  </div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content item-input">
+							  <div class="item-inner">
+								<div class="item-title item-floating-label">Total Goal Amount</div>
+								<div class="item-input-wrap">
+								  <input type="number" placeholder="Total Goal Amount"/>
+								</div>
+							  </div>
+							</div>
 						</li>
 						<li>
 							<div class="block block-strong">
@@ -1556,6 +1629,62 @@
 		</div>
 		
 		<div id="company-contact" class="popup demo-popup-swipe-handler">
+		  <div class="page">
+			<div class="swipe-handler"></div>
+			<div class="page-content">
+				<div class="block-title block-title-medium margin-top">Compose Email</div>
+				<div class="list no-hairlines-md no-margin">
+					<ul>
+						<li class="item-content item-input">
+						  <div class="item-inner">
+							<div class="item-title item-label item-floating-label">From</div>
+							<div class="item-input-wrap">
+							  <input type="email" placeholder="From" required validate>
+							  <span class="input-clear-button"></span>
+							</div>
+						  </div>
+						</li>
+						<li class="item-content item-input">
+						  <div class="item-inner">
+							<div class="item-title item-label item-floating-label">To</div>
+							<div class="item-input-wrap">
+							  <input type="email" placeholder="To" required validate>
+							  <span class="input-clear-button"></span>
+							</div>
+						  </div>
+						</li>
+						<li class="item-content item-input item-input-with-info">
+							<div class="item-inner">
+								<div class="item-title item-floating-label">Subject</div>
+								<div class="item-input-wrap">
+								  <input type="text" placeholder="Subject" required validate>
+								  <span class="input-clear-button"></span>
+								</div>
+							</div>
+						</li>
+						<li class="item-content item-input item-input-with-info">
+							<div class="item-inner">
+								<div class="item-title item-floating-label">Compose Email</div>
+								<div class="item-input-wrap">
+								  <textarea class="resizable" placeholder="Compose Email" required validate></textarea>
+								  <span class="input-clear-button"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="block block-strong">
+								<p>
+								</p>
+									<a href="#" id="SendEmail" class="button button-fill">Send Email</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		  </div>
+		</div>
+		
+		<div id="profile-invite-friends" class="popup demo-popup-swipe-handler">
 		  <div class="page">
 			<div class="swipe-handler"></div>
 			<div class="page-content">
