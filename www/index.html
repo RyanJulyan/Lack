@@ -14,6 +14,7 @@
   <title>Lack</title>
   <link rel="stylesheet" href="css/framework7.bundle.min.css">
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/animate.min.css">
   <link rel="apple-touch-icon" href="img/f7-icon-square.png">
   <link rel="icon" href="img/f7-icon.png">
 </head>
@@ -75,7 +76,7 @@
 					</button>
 				</p-->
 				<p class="segmented promotion-nav">
-					<button class="button sheet-open" data-sheet=".demo-sheet-top">2.5c</button>
+					<button class="button sheet-open animated delay-2s pulse" data-sheet=".demo-sheet-top">2.5c</button>
 					<button class="button sheet-open" data-sheet=".demo-sheet-top">5c</button>
 					<button class="button sheet-open" data-sheet=".demo-sheet-top">R1</button>
 				</p>
@@ -120,7 +121,7 @@
 										<i class="icon f7-icons if-not-md">arrow_right</i>
 										<i class="icon material-icons md-only">arrow_forward</i>
 									</div>
-									<div class="col" style="padding:15px">
+									<div id="Slide" class="col animated delay-2s shake slow" style="padding:15px">
 										Slide
 									</div>
 									<div class="col" style="padding:15px">
@@ -1284,6 +1285,14 @@
 										<div class="item-input-wrap">
 										  <input type="email" placeholder="Email" required validate>
 										  <span class="input-clear-button"></span>
+										</div>
+									  </div>
+									</li>
+									<li class="item-content item-input">
+									  <div class="item-inner">
+											<div class="item-title item-label item-floating-label">Date of birth</div>
+										<div class="item-input-wrap">
+										  <input type="text" placeholder="Date of birth" readonly="readonly" id="dob-calendar-default" required validate>
 										</div>
 									  </div>
 									</li>

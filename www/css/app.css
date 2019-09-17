@@ -657,3 +657,12 @@ code {
 .page-content {
   scroll-behavior: smooth !important;
 }
+
+#Slide{
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+}
+
+.pulse{
+  animation-iteration-count: infinite;
+}

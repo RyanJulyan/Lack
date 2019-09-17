@@ -190,6 +190,10 @@ var app = new Framework7({
           value: [today],
           minDate: today,
         });
+        self.calendarDefault = app.calendar.create({
+          inputEl: '#dob-calendar-default',
+          maxDate: today,
+        });
 		
 		self.listIndex = app.listIndex.create({
 		  // ".list-index" element
