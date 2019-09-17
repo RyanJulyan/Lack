@@ -663,6 +663,6 @@ code {
   animation-duration: 6s;
 }
 
-.pulse{
+.heartBeat{
   animation-iteration-count: infinite;
 }
