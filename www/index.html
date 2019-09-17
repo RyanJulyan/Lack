@@ -57,7 +57,7 @@
 					<a class="button tab-link" href="#tab-levels">
 						<i class="icon material-icons">bubble_chart</i>
 					</a>
-					<a class="button tab-link" href="#tab3">
+					<a class="button tab-link" href="#tab-profile-details">
 						<i class="icon f7-icons if-not-md">person_round</i>
 						<i class="icon material-icons md-only">account_circle</i>
 					</a>
@@ -97,7 +97,13 @@
         <div class="page page-content">
 			<div class="tabs">
 				<div id="tab-Advert" class="tab tab-active">
-					<div class="card demo-card-header-pic elevation-4">
+					<p style="font-size: 18px; font-weight:600;" class="no-margin text-align-center">
+					17:11
+					</p>
+					<p style="font-size: 10px; font-weight:600; margin-top: -8px !important;" class="no-margin text-align-center">
+					September 21, 2019
+					</p>
+					<div class="card demo-card-header-pic no-margin-top elevation-4">
 					  <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg); height:55vh" valign="bottom" class="card-header">Journey To Mountains</div>
 					  <div class="card-content card-content-padding">
 						<p class="date">Posted on January 21, 2015</p>
@@ -874,7 +880,7 @@
 								<div class="col-5 text-align-center">
 								</div>
 								<div class="col-80 text-align-center">
-									<a href="#" id="SendEmail" class="button button-block button-fill color-green">Invite Friends</a>
+									<a href="#" class="button button-block button-fill color-green  popup-open" data-popup="#profile-invite-friends" >Invite Friends</a>
 								</div>
 								<div class="col-5 text-align-center">
 								</div>
@@ -1030,7 +1036,7 @@
 										data-type="circle"
 										data-value="1"
 										data-value-text="Welcome"
-										data-value-text-color="#000"
+										data-value-text-color="#8e8e93"
 										data-border-color="#ff9800"
 										>
 										</div>
@@ -1049,10 +1055,13 @@
 										<div
 										class="gauge gauge-init"
 										data-type="circle"
-										data-value="0.67"
-										data-value-text="$670"
-										data-value-text-color="#000"
+										data-value="1"
+										data-value-text="Intoduction"
+										data-value-text-color="#8e8e93"
 										data-border-color="#ff9800"
+										data-label-text="Slides"
+										data-label-text-color="#8e8e93"
+										data-label-font-size="25"
 										>
 										</div>
 										<div class="text-align-center" style="font-weight:600">
@@ -1063,10 +1072,13 @@
 										<div
 										class="gauge gauge-init"
 										data-type="circle"
-										data-value="0.67"
-										data-value-text="$670"
-										data-value-text-color="#000"
+										data-value="1"
+										data-value-text="Tutorial"
+										data-value-text-color="#8e8e93"
 										data-border-color="#ff9800"
+										data-label-text="Tour"
+										data-label-text-color="#8e8e93"
+										data-label-font-size="25"
 										>
 										</div>
 										<div class="text-align-center" style="font-weight:600">
@@ -1085,9 +1097,12 @@
 										class="gauge gauge-init"
 										data-type="circle"
 										data-value="0"
-										data-value-text="Set Goals"
+										data-value-text="Set Goal"
 										data-value-text-color="#8e8e93"
 										data-border-color="#ff9800"
+										data-label-text="Personal"
+										data-label-text-color="#8e8e93"
+										data-label-font-size="25"
 										>
 										</div>
 										<div class="text-align-center text-color-gray" style="font-weight:600">
@@ -1122,13 +1137,16 @@
 										<div
 										class="gauge gauge-init"
 										data-type="circle"
-										data-value="0.67"
-										data-value-text="$670"
+										data-value="0.33"
+										data-value-text="Invite"
 										data-value-text-color="#8e8e93"
 										data-border-color="#ff9800"
+										data-label-text="6 People"
+										data-label-text-color="#8e8e93"
+										data-label-font-size="25"
 										>
 										</div>
-										<div class="text-align-center" style="font-weight:600">
+										<div class="text-align-center text-color-gray" style="font-weight:600">
 											Animation
 										</div>
 									</div>
@@ -1143,12 +1161,13 @@
 										<div
 										class="gauge gauge-init"
 										data-type="circle"
-										data-value="0.67"
-										data-value-text="$670"
-										data-value-text-color="#000"
+										data-value="0"
+										data-value-text="Set Goal"
+										data-value-text-color="#8e8e93"
 										data-border-color="#ff9800"
-										data-label-font-weight="800"
-										data-label-font-size="20"
+										data-label-text="Relationships"
+										data-label-text-color="#8e8e93"
+										data-label-font-size="25"
 										>
 										</div>
 										<div class="text-align-center text-color-gray" style="font-weight:600">
@@ -1167,9 +1186,12 @@
 										class="gauge gauge-init"
 										data-type="circle"
 										data-value="0"
-										data-value-text="$670"
-										data-value-text-color="#000"
+										data-value-text="Profile"
+										data-value-text-color="#8e8e93"
 										data-border-color="#ff9800"
+										data-label-text="Additional"
+										data-label-text-color="#8e8e93"
+										data-label-font-size="25"
 										>
 										</div>
 										<div class="text-align-center text-color-gray" style="font-weight:600">
@@ -1181,9 +1203,12 @@
 										class="gauge gauge-init"
 										data-type="circle"
 										data-value="0"
-										data-value-text="$670"
-										data-value-text-color="#000"
+										data-value-text="Set Goal"
+										data-value-text-color="#8e8e93"
 										data-border-color="#ff9800"
+										data-label-text="Financial"
+										data-label-text-color="#8e8e93"
+										data-label-font-size="25"
 										>
 										</div>
 										<div class="text-align-center text-color-gray" style="font-weight:600">
@@ -1195,9 +1220,12 @@
 										class="gauge gauge-init"
 										data-type="circle"
 										data-value="0"
-										data-value-text="$670"
-										data-value-text-color="#000"
+										data-value-text="Profile"
+										data-value-text-color="#8e8e93"
 										data-border-color="#ff9800"
+										data-label-text="Social"
+										data-label-text-color="#8e8e93"
+										data-label-font-size="25"
 										>
 										</div>
 										<div class="text-align-center text-color-gray" style="font-weight:600">
@@ -1210,6 +1238,149 @@
 								<div class="block-title"></div>
 							</div>
 						</div>
+						
+						<div id="tab-profile-details" class="tab">
+						<div style="text-align:center;" class="display-flex padding justify-content-space-between align-items-center">
+							<div style="text-align:center; font-size: 18px; width:100%;"><b>Profile</b></div>
+						</div>
+						<div style="text-align:center;" class="block-title-small">
+								Complete your profile to unlock different levels
+						</div>
+							<div class="list">
+								<div class="card elevation-4">
+								<div class="card-header bg-color-green text-color-white padding-vertical">Basic Information</div>
+								  <div class="card-content card-content-padding">
+									<ul>
+									<li class="item-content item-input">
+									  <div class="item-inner">
+										<div class="item-title item-label item-floating-label">Name</div>
+										<div class="item-input-wrap">
+										  <input type="text" placeholder="Name" required validate>
+										  <span class="input-clear-button"></span>
+										</div>
+									  </div>
+									</li>
+									<li class="item-content item-input">
+									  <div class="item-inner">
+										<div class="item-title item-label item-floating-label">Surname</div>
+										<div class="item-input-wrap">
+										  <input type="text" placeholder="Surname" required validate>
+										  <span class="input-clear-button"></span>
+										</div>
+									  </div>
+									</li>
+									<li class="item-content item-input">
+									  <div class="item-inner">
+										<div class="item-title item-label item-floating-label">Cellphone</div>
+										<div class="item-input-wrap">
+										  <input type="number" placeholder="Cellphone" required validate>
+										  <span class="input-clear-button"></span>
+										</div>
+									  </div>
+									</li>
+									<li class="item-content item-input">
+									  <div class="item-inner">
+										<div class="item-title item-label item-floating-label">Email</div>
+										<div class="item-input-wrap">
+										  <input type="email" placeholder="Email" required validate>
+										  <span class="input-clear-button"></span>
+										</div>
+									  </div>
+									</li>
+									</ul>
+								  </div>
+								</div>
+								
+								<div class="block-title"></div>
+								<div class="card elevation-4">
+								<div class="card-header bg-color-deeporange text-color-white padding-vertical">Additional Information</div>
+								  <div class="card-content card-content-padding">
+									<ul>
+									<li class="item-content item-input">
+									  <div class="item-inner">
+										<div class="item-title item-floating-label">Gender</div>
+										<div class="item-input-wrap">
+										  <input type="text" placeholder="Gender" id="gender"/>
+										</div>
+									  </div>
+									</li>
+									<li class="item-content item-input">
+									  <div class="item-inner">
+										<div class="item-title item-label item-floating-label">Job</div>
+										<div class="item-input-wrap">
+										  <input type="text" placeholder="Job">
+										  <span class="input-clear-button"></span>
+										</div>
+									  </div>
+									</li>
+									<li class="item-content item-input">
+									  <div class="item-inner">
+										<div class="item-title item-floating-label">Education</div>
+										<div class="item-input-wrap">
+										  <input type="text" placeholder="Education" id="education"/>
+										</div>
+									  </div>
+									</li>
+									<li class="item-content item-input item-input-with-info">
+										<div class="item-inner">
+											<div class="item-title item-floating-label">Home Address</div>
+											<div class="item-input-wrap">
+											  <textarea class="resizable" placeholder="Home Address"></textarea>
+											  <span class="input-clear-button"></span>
+											</div>
+										</div>
+									</li>
+									</ul>
+								  </div>
+								</div>
+								
+								<div class="block-title"></div>
+								<div class="card elevation-4">
+								<div class="card-header bg-color-lightblue text-color-white padding-vertical">Social Information</div>
+								  <div class="card-content card-content-padding">
+									<ul>
+									<li class="item-content item-input item-input-with-info">
+										<div class="item-inner">
+											<div class="item-title item-floating-label">Facebook</div>
+											<div class="item-input-wrap">
+											  <input type="text" placeholder="Facebook">
+											  <span class="input-clear-button"></span>
+											</div>
+										</div>
+									</li>
+									<li class="item-content item-input item-input-with-info">
+										<div class="item-inner">
+											<div class="item-title item-floating-label">Twitter</div>
+											<div class="item-input-wrap">
+											  <input type="text" placeholder="Twitter">
+											  <span class="input-clear-button"></span>
+											</div>
+										</div>
+									</li>
+									<li class="item-content item-input item-input-with-info">
+										<div class="item-inner">
+											<div class="item-title item-floating-label">Instagram</div>
+											<div class="item-input-wrap">
+											  <input type="text" placeholder="Instagram">
+											  <span class="input-clear-button"></span>
+											</div>
+										</div>
+									</li>
+									</ul>
+								  </div>
+								</div>
+								<ul>
+									<li>
+										<div class="block block-strong">
+											<p>
+											</p>
+												<a href="#" class="button button-large button-fill">Save Profile</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
 					</div>
 					
 					<div class="block-title"></div>
@@ -1234,7 +1405,129 @@
 		  <div class="sheet-modal-inner">
 			<div class="page-content">
 			  <div class="block">
-				<p>Earn Extra Daily</p>
+				<div style="height: 115px;" class="row no-gap">
+					<div style="padding-left:3%;;" class="col-25 text-align-left">
+						<div
+						class="gauge gauge-init"
+						data-type="circle"
+						data-size="100"
+						data-value="1"
+						data-value-text="2"
+						data-value-text-color="#8e8e93"
+						data-value-font-size="25"
+						data-border-color="#ff9800"
+						data-border-width="7"
+						data-label-text="Days"
+						data-label-text-color="#8e8e93"
+						data-label-font-size="18"
+						>
+						</div>
+					</div>
+					<div class="col-75 text-align-center">
+						<a href="#" class="link margin-vertical popup-open sheet-close" @click="app.methods.more()"  data-popup="#advert-details">View Advert</a>
+					</div>
+				</div>
+			  
+				<div style="height:50px;" class="row no-gap">
+					<div class="col-10 text-align-center">
+						<div
+						class="gauge gauge-init"
+						data-type="circle"
+						data-size="50"
+						data-value="1"
+						data-value-text="M"
+						data-value-text-color="#8e8e93"
+						data-value-font-size="15"
+						data-border-color="#ff9800"
+						data-border-width="5"
+						>
+						</div>
+					</div>
+					<div class="col-10 text-align-center">
+						<div
+						class="gauge gauge-init"
+						data-type="circle"
+						data-size="50"
+						data-value="0"
+						data-value-text="T"
+						data-value-text-color="#8e8e93"
+						data-value-font-size="15"
+						data-border-color="#ff9800"
+						data-border-width="5"
+						>
+						</div>
+					</div>
+					<div class="col-10 text-align-center">
+						<div
+						class="gauge gauge-init"
+						data-type="circle"
+						data-size="50"
+						data-value="0"
+						data-value-text="W"
+						data-value-text-color="#8e8e93"
+						data-value-font-size="15"
+						data-border-color="#ff9800"
+						data-border-width="5"
+						>
+						</div>
+					</div>
+					<div class="col-10 text-align-center">
+						<div
+						class="gauge gauge-init"
+						data-type="circle"
+						data-size="50"
+						data-value="0"
+						data-value-text="T"
+						data-value-text-color="#8e8e93"
+						data-value-font-size="15"
+						data-border-color="#ff9800"
+						data-border-width="5"
+						>
+						</div>
+					</div>
+					<div class="col-10 text-align-center">
+						<div
+						class="gauge gauge-init"
+						data-type="circle"
+						data-size="50"
+						data-value="0"
+						data-value-text="F"
+						data-value-text-color="#8e8e93"
+						data-value-font-size="15"
+						data-border-color="#ff9800"
+						data-border-width="5"
+						>
+						</div>
+					</div>
+					<div class="col-10 text-align-center">
+						<div
+						class="gauge gauge-init"
+						data-type="circle"
+						data-size="50"
+						data-value="0"
+						data-value-text="S"
+						data-value-text-color="#8e8e93"
+						data-value-font-size="15"
+						data-border-color="#ff9800"
+						data-border-width="5"
+						>
+						</div>
+					</div>
+					<div class="col-10 text-align-center">
+						<div
+						class="gauge gauge-init"
+						data-type="circle"
+						data-size="50"
+						data-value="0"
+						data-value-text="S"
+						data-value-text-color="#8e8e93"
+						data-value-font-size="15"
+						data-border-color="#ff9800"
+						data-border-width="5"
+						>
+						</div>
+					</div>
+				</div>
 			  </div>
 			</div>
 		  </div>
@@ -1245,7 +1538,7 @@
 			<div class="swipe-handler"></div>
 			<div class="page-content">
 			  <div class="block block-strong">
-				<div class="card demo-card-header-pic">
+				<div class="card demo-card-header-pic elevation-4">
 				  <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg); height:55vh" valign="bottom" class="card-header">Journey To Mountains</div>
 				  <div class="card-content card-content-padding">
 					<p class="date">Posted on January 21, 2015</p>
@@ -1393,7 +1686,14 @@
 				
 				<div id="ratings" class="block-title"></div>
 				<div class="card elevation-4">
-					<div class="card-header bg-color-yellow text-color-white padding-vertical">Ratings</div>
+					<div class="card-header bg-color-yellow text-color-white padding-vertical">
+					Ratings
+					
+					<a class="link popup-open text-color-white" data-popup="#company-rating" href="#">
+						<i class="icon f7-icons if-not-md">add</i>
+						<i class="icon material-icons md-only">add</i>
+					</a>
+					</div>
 					<div class="card-content padding-vertical">
 						<div class="list media-list">
 						  <ul>
@@ -1497,7 +1797,7 @@
 					<div style="font-size: 22px"><b>R500</b></div>
 				  </div>
 				  <div class="padding-horizontal padding-bottom">
-					<a id="RequestService" class="button button-large button-fill">Request Service</a>
+					<a id="RequestService" class="button button-large button-large button-fill">Request Service</a>
 					<div class="margin-top text-align-center">Terms and conditions apply</div>
 				  </div>
 				</div>
@@ -1536,7 +1836,7 @@
 						<li>
 							<div class="block block-strong">
 								<p>
-									<a href="" class="button button-fill color-blue popup-close">Save Goal</a>
+									<a href="" class="button button-large button-fill color-blue popup-close">Save Goal</a>
 								</p>
 							</div>
 						</li>
@@ -1577,7 +1877,7 @@
 						<li>
 							<div class="block block-strong">
 								<p>
-									<a href="" class="button button-fill color-green popup-close">Save Goal</a>
+									<a href="" class="button button-large button-fill color-green popup-close">Save Goal</a>
 								</p>
 							</div>
 						</li>
@@ -1618,7 +1918,7 @@
 						<li>
 							<div class="block block-strong">
 								<p>
-									<a href="" class="button button-fill color-red popup-close">Save Goal</a>
+									<a href="" class="button button-large button-fill color-red popup-close">Save Goal</a>
 								</p>
 							</div>
 						</li>
@@ -1632,53 +1932,98 @@
 		  <div class="page">
 			<div class="swipe-handler"></div>
 			<div class="page-content">
-				<div class="block-title block-title-medium margin-top">Compose Email</div>
-				<div class="list no-hairlines-md no-margin">
+				<div class="block-title block-title-medium margin-top">Compose Message</div>
+				
+				<div class="segmented margin-left-half margin-right-half">
+					<a class="button tab-link tab-link-active" href="#tab-company-contact-sms">
+						SMS
+					</a>
+					<a class="button tab-link" href="#tab-company-contact-email">
+						Email
+					</a>
+				</div>
+				<div class="list no-hairlines-md">
 					<ul>
-						<li class="item-content item-input">
+					  <li>
+						<div class="item-content item-input">
 						  <div class="item-inner">
-							<div class="item-title item-label item-floating-label">From</div>
+								<div class="item-title item-label item-floating-label">Send Message On</div>
 							<div class="item-input-wrap">
-							  <input type="email" placeholder="From" required validate>
-							  <span class="input-clear-button"></span>
+							  <input type="text" placeholder="Send Message On" readonly="readonly" id="demo-calendar-default"/>
 							</div>
 						  </div>
-						</li>
-						<li class="item-content item-input">
-						  <div class="item-inner">
-							<div class="item-title item-label item-floating-label">To</div>
-							<div class="item-input-wrap">
-							  <input type="email" placeholder="To" required validate>
-							  <span class="input-clear-button"></span>
-							</div>
-						  </div>
-						</li>
-						<li class="item-content item-input item-input-with-info">
-							<div class="item-inner">
-								<div class="item-title item-floating-label">Subject</div>
-								<div class="item-input-wrap">
-								  <input type="text" placeholder="Subject" required validate>
-								  <span class="input-clear-button"></span>
-								</div>
-							</div>
-						</li>
-						<li class="item-content item-input item-input-with-info">
-							<div class="item-inner">
-								<div class="item-title item-floating-label">Compose Email</div>
-								<div class="item-input-wrap">
-								  <textarea class="resizable" placeholder="Compose Email" required validate></textarea>
-								  <span class="input-clear-button"></span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="block block-strong">
-								<p>
-								</p>
-									<a href="#" id="SendEmail" class="button button-fill">Send Email</a>
-							</div>
-						</li>
+						</div>
+					  </li>
 					</ul>
+				</div>
+				<div class="tabs">
+					<div id="tab-company-contact-sms" class="list no-hairlines-md no-margin tab tab-active">
+						<ul>
+							<li class="item-content item-input">
+							  <div class="item-inner">
+								<div class="item-title item-label item-floating-label">To</div>
+								<div class="item-input-wrap">
+								  <input type="email" placeholder="To" required validate>
+								  <span class="input-clear-button"></span>
+								</div>
+							  </div>
+							</li>
+							<li class="item-content item-input item-input-with-info">
+								<div class="item-inner">
+									<div class="item-title item-floating-label">Compose Message</div>
+									<div class="item-input-wrap">
+									  <textarea class="resizable" placeholder="Compose Message" required validate></textarea>
+									  <span class="input-clear-button"></span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="block block-strong">
+									<p>
+									</p>
+										<a href="#" class="button button-large button-fill">Send Message</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div id="tab-company-contact-email" class="list no-hairlines-md no-margin tab">
+						<ul>
+							<li class="item-content item-input">
+							  <div class="item-inner">
+								<div class="item-title item-label item-floating-label">To</div>
+								<div class="item-input-wrap">
+								  <input type="email" placeholder="To" required validate>
+								  <span class="input-clear-button"></span>
+								</div>
+							  </div>
+							</li>
+							<li class="item-content item-input item-input-with-info">
+								<div class="item-inner">
+									<div class="item-title item-floating-label">Subject</div>
+									<div class="item-input-wrap">
+									  <input type="text" placeholder="Subject" required validate>
+									  <span class="input-clear-button"></span>
+									</div>
+								</div>
+							</li>
+							<li class="item-content item-input item-input-with-info">
+								<div class="item-inner">
+									<div class="item-title item-floating-label">Compose Email</div>
+									<div class="item-input-wrap">
+									  <textarea class="resizable" placeholder="Compose Email" required validate></textarea>
+									  <span class="input-clear-button"></span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="block block-strong">
+									<p>
+									</p>
+										<a href="#" class="button button-large button-fill">Send Message</a>
+								</div>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		  </div>
@@ -1688,54 +2033,122 @@
 		  <div class="page">
 			<div class="swipe-handler"></div>
 			<div class="page-content">
-				<div class="block-title block-title-medium margin-top">Compose Email</div>
-				<div class="list no-hairlines-md no-margin">
-					<ul>
-						<li class="item-content item-input">
-						  <div class="item-inner">
-							<div class="item-title item-label item-floating-label">From</div>
-							<div class="item-input-wrap">
-							  <input type="email" placeholder="From" required validate>
-							  <span class="input-clear-button"></span>
-							</div>
-						  </div>
-						</li>
-						<li class="item-content item-input">
-						  <div class="item-inner">
-							<div class="item-title item-label item-floating-label">To</div>
-							<div class="item-input-wrap">
-							  <input type="email" placeholder="To" required validate>
-							  <span class="input-clear-button"></span>
-							</div>
-						  </div>
-						</li>
-						<li class="item-content item-input item-input-with-info">
-							<div class="item-inner">
-								<div class="item-title item-floating-label">Subject</div>
-								<div class="item-input-wrap">
-								  <input type="text" placeholder="Subject" required validate>
-								  <span class="input-clear-button"></span>
-								</div>
-							</div>
-						</li>
-						<li class="item-content item-input item-input-with-info">
-							<div class="item-inner">
-								<div class="item-title item-floating-label">Compose Email</div>
-								<div class="item-input-wrap">
-								  <textarea class="resizable" placeholder="Compose Email" required validate></textarea>
-								  <span class="input-clear-button"></span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="block block-strong">
-								<p>
-								</p>
-									<a href="#" id="SendEmail" class="button button-fill">Send Email</a>
-							</div>
-						</li>
-					</ul>
+				<div class="block-title block-title-medium margin-top">Invite Friends</div>
+				
+				<div class="segmented margin-left-half margin-right-half">
+					<a class="button tab-link tab-link-active" href="#tab-invite-friends-sms">
+						SMS
+					</a>
+					<a class="button tab-link" href="#tab-invite-friends-email">
+						Email
+					</a>
 				</div>
+				<div class="tabs">
+					<div id="tab-invite-friends-sms" class="list no-hairlines-md no-margin tab tab-active">
+						<ul>
+							<li class="item-content item-input">
+							  <div class="item-inner">
+								<div class="item-title item-label item-floating-label">To</div>
+								<div class="item-input-wrap">
+								  <input type="email" placeholder="To" required validate>
+								  <span class="input-clear-button"></span>
+								</div>
+							  </div>
+							</li>
+							<li class="item-content item-input item-input-with-info">
+								<div class="item-inner">
+									<div class="item-title item-floating-label">Compose Message</div>
+									<div class="item-input-wrap">
+									  <textarea class="resizable" placeholder="Compose Message" required validate></textarea>
+									  <span class="input-clear-button"></span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="block block-strong">
+									<p>
+									</p>
+										<a href="#" class="button button-large button-fill">Send Message</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div id="tab-invite-friends-email" class="list no-hairlines-md no-margin tab">
+						<ul>
+							<li class="item-content item-input">
+							  <div class="item-inner">
+								<div class="item-title item-label item-floating-label">To</div>
+								<div class="item-input-wrap">
+								  <input type="email" placeholder="To" required validate>
+								  <span class="input-clear-button"></span>
+								</div>
+							  </div>
+							</li>
+							<li class="item-content item-input item-input-with-info">
+								<div class="item-inner">
+									<div class="item-title item-floating-label">Subject</div>
+									<div class="item-input-wrap">
+									  <input type="text" placeholder="Subject" required validate>
+									  <span class="input-clear-button"></span>
+									</div>
+								</div>
+							</li>
+							<li class="item-content item-input item-input-with-info">
+								<div class="item-inner">
+									<div class="item-title item-floating-label">Compose Email</div>
+									<div class="item-input-wrap">
+									  <textarea class="resizable" placeholder="Compose Email" required validate></textarea>
+									  <span class="input-clear-button"></span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="block block-strong">
+									<p>
+									</p>
+										<a href="#" class="button button-large button-fill">Send Message</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		  </div>
+		</div>
+		
+		<div id="company-rating" class="popup demo-popup-swipe-handler">
+		  <div class="page">
+			<div class="swipe-handler"></div>
+			<div class="page-content">
+				<div class="block-title block-title-medium margin-top">Rate Company</div>
+					<div class="block block-strong">
+						<div class="range-slider range-slider-init"
+						  data-min="1"
+						  data-max="5"
+						  data-label="true"
+						  data-value="4"
+						></div>
+					</div>
+					<div id="tab-invite-friends-sms" class="list no-hairlines-md no-margin">
+						<ul>
+							<li class="item-content item-input item-input-with-info">
+								<div class="item-inner">
+									<div class="item-title item-floating-label">Comment</div>
+									<div class="item-input-wrap">
+									  <textarea class="resizable" placeholder="Comment" required validate></textarea>
+									  <span class="input-clear-button"></span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="block block-strong">
+									<p>
+									</p>
+										<a href="#" class="button button-large button-fill">Submit</a>
+								</div>
+							</li>
+						</ul>
+					</div>
 			</div>
 		  </div>
 		</div>

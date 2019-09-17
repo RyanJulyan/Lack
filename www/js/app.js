@@ -132,6 +132,26 @@ var app = new Framework7({
 		
 		
         self.pickerDevice = app.picker.create({
+          inputEl: '#gender',
+          cols: [
+            {
+              textAlign: 'center',
+              values: [ 'Male','Female','Other']
+            }
+          ]
+        });
+		
+        self.pickerDevice = app.picker.create({
+          inputEl: '#education',
+          cols: [
+            {
+              textAlign: 'center',
+              values: [ 'Elementary School', 'Grade 9', 'Matric', 'Certificate', 'Diploma', 'Associate Degree', 'Bachelor’s Degree', 'Master’s Degree', 'Doctoral Degree', 'Other']
+            }
+          ]
+        });
+		
+        self.pickerDevice = app.picker.create({
           inputEl: '#personal-category',
           cols: [
             {
@@ -159,6 +179,16 @@ var app = new Framework7({
               values: [ 'Baby','Date Night','Furniture & Tables','Hobbies','Holidays & Getaways','Homeware & Kitchen','Medical & Health','Pets','Property & Housing','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual','Other']
             }
           ]
+        });
+		
+        var today = new Date();
+        today.setHours(0,0,0,0);
+		
+        // Default
+        self.calendarDefault = app.calendar.create({
+          inputEl: '#demo-calendar-default',
+          value: [today],
+          minDate: today,
         });
 		
 		self.listIndex = app.listIndex.create({
