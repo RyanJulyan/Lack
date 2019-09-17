@@ -101,6 +101,12 @@ var app = new Framework7({
         });
 		
         self.popupSwipeHandler = self.popup.create({
+          el: '#company-rating',
+          swipeToClose: 'to-bottom',
+          swipeHandler: '.swipe-handler'
+        });
+		
+        self.popupSwipeHandler = self.popup.create({
           el: '#services-details',
           swipeToClose: 'to-bottom',
           swipeHandler: '.swipe-handler'
