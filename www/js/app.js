@@ -223,6 +223,9 @@ var app = new Framework7({
 		$(document).on("click", "#more", function(){
 			app.methods.more();
 		});
+		$(document).on("click", "#viewSpecialAdvert", function(){
+			app.methods.more();
+		});
 		$(document).on("click", ".share", function(){
 			app.methods.share();
 		});
