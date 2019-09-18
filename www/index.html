@@ -2130,13 +2130,24 @@
 			<div class="swipe-handler"></div>
 			<div class="page-content">
 				<div class="block-title block-title-medium margin-top">Rate Company</div>
-				<div class="block block-strong">
-					<div class="range-slider range-slider-init"
-					  data-min="1"
-					  data-max="5"
-					  data-label="true"
-					  data-value="4"
-					></div>
+				<div class="list simple-list">
+					<ul>
+					  <li>
+						<div class="item-cell width-auto flex-shrink-0">
+							<i class="icon f7-icons if-not-md color-gray">star_fill</i>
+							<i class="icon material-icons md-only color-gray">star</i>
+						</div>
+						<div class="item-cell flex-shrink-3">
+						  <div class="range-slider range-slider-init color-yellow" data-label="true">
+							<input type="range" min="0" max="5" step="1" value="4">
+						  </div>
+						</div>
+						<div class="item-cell width-auto flex-shrink-0">
+							<i class="icon f7-icons if-not-md color-yellow">star_fill</i>
+							<i class="icon material-icons md-only color-yellow">star</i>
+						</div>
+					  </li>
+					</ul>
 				</div>
 				<div class="list no-hairlines-md no-margin">
 					<ul>
@@ -2153,7 +2164,7 @@
 							<div class="block block-strong">
 								<p>
 								</p>
-									<a href="#" class="button button-large button-fill">Submit</a>
+									<a href="#" class="button button-large button-fill color-yellow">Submit</a>
 							</div>
 						</li>
 					</ul>
