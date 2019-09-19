@@ -52,6 +52,16 @@ var app = new Framework7({
 
 		window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
       },
+      hideAdvertNav: function () {
+		$('.advert-nav').hide();
+      },
+      showAdvertNav: function () {
+		$('.advert-nav').show();
+		$('.slider').addClass('disabled');
+		setTimeout(function(){
+			$('.slider').removeClass('disabled');
+		}, 1500);
+      },
       hidePromotionNav: function () {
 		$('.promotion-nav').hide();
       },
@@ -71,6 +81,40 @@ var app = new Framework7({
       },
       showProfileNav: function () {
 		$('.profile-nav').show();
+      },
+      showTime: function () {
+		  
+		var month = new Array();
+		month[0]  = "January";
+		month[1]  = "February";
+		month[2]  = "March";
+		month[3]  = "April";
+		month[4]  = "May";
+		month[5]  = "June";
+		month[6]  = "July";
+		month[7]  = "August";
+		month[8]  = "September";
+		month[9]  = "October";
+		month[10] = "November";
+		month[11] = "December";
+		
+		function startTime() {
+		  var today = new Date();
+		  var h = today.getHours();
+		  var m = today.getMinutes();
+		  m = checkTime(m);
+		  var M = month[today.getMonth()];
+		  var d = today.getDate();
+		  
+		  document.getElementById('time').innerHTML = h + ":" + m;
+		  document.getElementById('date').innerHTML = M + " " + d;
+		  var t = setTimeout(startTime, 1000);
+		}
+		function checkTime(i) {
+		  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		  return i;
+		}
+		startTime();
       },
   },
 	on: {
@@ -162,7 +206,7 @@ var app = new Framework7({
           cols: [
             {
               textAlign: 'center',
-              values: [ 'Appliances','Baby','Beauty','Books','Cameras','Camping & Outdoor','Cellphones & Accessories','Community','Computers & Tablets','DIY & Auto','Food','Furniture & Tables','Gaming','Garden, Pool & Patio','Holidays & Getaways','Homeware & Kitchen','Laptops & Accessories','Liquor & Soft Drinks','Luggage & Travel','Medical & Health','Movies & Series','Music','Pets','Property & Housing','Recreation','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual','Other']
+              values: [ 'Airtime','Appliances','Baby','Beauty','Books','Cameras','Camping & Outdoor','Cellphones & Accessories','Community','Computers & Tablets','DIY & Auto','Food','Furniture & Tables','Gaming','Garden, Pool & Patio','Holidays & Getaways','Homeware & Kitchen','Laptops & Accessories','Liquor & Soft Drinks','Luggage & Travel','Medical & Health','Movies & Series','Music','Pets','Property & Housing','Recreation','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual','Other']
             }
           ]
         });
@@ -182,7 +226,7 @@ var app = new Framework7({
           cols: [
             {
               textAlign: 'center',
-              values: [ 'Baby','Date Night','Furniture & Tables','Hobbies','Holidays & Getaways','Homeware & Kitchen','Medical & Health','Pets','Property & Housing','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual','Other']
+              values: [ 'Airtime','Baby','Date Night','Furniture & Tables','Hobbies','Holidays & Getaways','Homeware & Kitchen','Medical & Health','Pets','Property & Housing','Retail & Fashion','School & University','Sport','Toys','Travel & Outdoor','TV, Audio & Visual','Other']
             }
           ]
         });
@@ -214,6 +258,12 @@ var app = new Framework7({
 		  label: true,
 		});
 		
+		app.methods.showTime();
+		setTimeout(function(){
+			$('.slider').removeClass('disabled');
+		}, 1500);
+		
+		app.methods.hidePromotionNav();
 		app.methods.hideContactSearchAndNav();
 		app.methods.hideProfileNav();
 		
@@ -237,11 +287,12 @@ var app = new Framework7({
 			app.methods.hideContactSearchAndNav();
 			app.methods.hideProfileNav();
 			app.methods.hidePromotionNav();
+			app.methods.hideAdvertNav();
 		});
 		$(document).on("click", "#tab-link-advert", function(){
-			app.methods.showPromotionNav();
+			app.methods.showAdvertNav();
 		});
-		$(document).on("click", "#tab-link-goals", function(){
+		$(document).on("click", ".tab-link-goals", function(){
 			app.methods.showPromotionNav();
 		});
 		$(document).on("click", "#tab-link-companies", function(){

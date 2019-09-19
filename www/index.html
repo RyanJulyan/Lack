@@ -32,7 +32,7 @@
 				  <i class="icon material-icons md-only">phone_iphone</i>
 				  <span class="tabbar-label">Advert</span>
 				</a>
-				<a href="#tab-Goals" id="tab-link-goals" class="tab-link tab-link-main-nav">
+				<a href="#tab-Goals" class="tab-link tab-link-main-nav tab-link-goals">
 				  <i class="icon f7-icons if-not-md">money_dollar_round_fill</i>
 				  <i class="icon material-icons md-only">monetization_on</i>
 				  <span class="tabbar-label">Goals</span>
@@ -58,29 +58,30 @@
 					<a class="button tab-link" href="#tab-levels">
 						<i class="icon material-icons">bubble_chart</i>
 					</a>
+					<a class="button tab-link" href="#tab-coupons">
+						<i class="icon f7-icons">list_fill</i>
+					</a>
 					<a class="button tab-link" href="#tab-profile-details">
 						<i class="icon f7-icons if-not-md">person_round</i>
 						<i class="icon material-icons md-only">account_circle</i>
 					</a>
 				  </div>
-				<!--p class="segmented profile-nav">
-					<button class="button sheet-open" data-sheet=".demo-sheet-top">
-						<i class="icon f7-icons">sort_up</i>
+				<p class="segmented advert-nav">
+					<button class="button">R99999.99</button>
+					<button id="time" style="font-size: 30px; font-weight:600;" class="button text-align-right text-color-black disabled">
+						17:11
 					</button>
-					<button class="button sheet-open" data-sheet=".demo-sheet-top">
-						<i class="icon material-icons">bubble_chart</i>
+					<button id="date" style="font-size: 10px; font-weight:600;" class="button text-align-left text-color-black disabled">
+					September 21
 					</button>
-					<button class="button sheet-open" data-sheet=".demo-sheet-top">
-						<i class="icon f7-icons if-not-md">person_round</i>
-						<i class="icon material-icons md-only">account_circle</i>
-					</button>
-				</p-->
+				</p>
 				<p class="segmented promotion-nav">
 					<button class="button sheet-open animated delay-2s heartBeat slow" data-sheet=".demo-sheet-top">2.5c</button>
 					<button class="button sheet-open" data-sheet=".demo-sheet-top">5c</button>
+					<button class="button sheet-open" data-sheet=".demo-sheet-top">50c</button>
 					<button class="button sheet-open" data-sheet=".demo-sheet-top">R1</button>
 				</p>
-				<form data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init" style="display: none;">
+				<form data-search-container=".search-list" data-search-in=".item-inner" class="searchbar searchbar-init" style="display: none;">
 				  <div class="searchbar-inner">
 					<div class="searchbar-input-wrap">
 					  <input type="search" placeholder="Search"/>
@@ -97,22 +98,21 @@
 		<div class="list-index"></div>
         <div class="page page-content">
 			<div class="tabs">
-				<div id="tab-Advert" class="tab tab-active">
-					<p style="font-size: 18px; font-weight:600;" class="no-margin text-align-center">
-					17:11
-					</p>
-					<p style="font-size: 10px; font-weight:600; margin-top: -8px !important;" class="no-margin text-align-center">
-					September 21, 2019
-					</p>
-					<div class="card demo-card-header-pic no-margin-top elevation-4">
-					  <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg); height:55vh" valign="bottom" class="card-header">Journey To Mountains</div>
-					  <div class="card-content card-content-padding">
-						<p class="date">Posted on January 21, 2015</p>
+				<div id="tab-Advert" style="height: 100%;" class="tab tab-active">
+					
+					<div style="height: 95%;" class="card demo-card-header-pic elevation-4">
+					  <div style="background-image:url(https://cdn.framework7.io/placeholder/nature-1000x600-3.jpg); height:78%" valign="middle" class="card-header">
+						<span style="font-size:150%;">
+							Journey To Mountains
+						</span>
+					  </div>
+					  <div style="padding: 2.5% 1.5% 2.5% 1.5%" class="card-content">
+						<span>Posted on January 21, 2015</span>
 					  </div>	
 					  <div class="card-footer" style="padding:0px">
 						<div class="list" style="width:100%">			  
 							<ul>
-							  <li class="swipeout">
+							  <li class="swipeout slider disabled">
 								<div class="swipeout-content">
 								  <div class="item-content" style="padding-left:0px">
 									<div class="col" style="padding:15px">
@@ -868,7 +868,7 @@
 					
 				</div>
 				<div id="tab-Profile" class="tab">
-				<div class="tabs-swipeable-wrap">
+				<div class="">
 					<div class="tabs">
 							<div id="tab-friends" class="tab tab-active">
 								<div class="display-flex padding justify-content-space-between align-items-center">
@@ -1095,7 +1095,7 @@
 										<div class="col-5 text-align-center">
 										</div>
 										<div class="col-25 text-align-center">
-											<div
+											<div data-tab=".tab-link-goals"
 											class="gauge gauge-init"
 											data-type="circle"
 											data-value="0"
@@ -1109,6 +1109,8 @@
 											</div>
 											<div class="text-align-center text-color-gray" style="font-weight:600">
 												Coupon
+												<a href="#tab-link-goals" class="tab-link" data-tab=".tab-link-goals">Tab 1</a>
+												
 											</div>
 										</div>
 										<div class="col-5 text-align-center">
