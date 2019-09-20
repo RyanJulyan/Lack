@@ -16,7 +16,7 @@ class TeamsTableSeeder extends Seeder
     {
         // 1
         DB::table('teams')->insert([
-            'name' => 'iMining',
+            'team_name' => 'Lack',
             'created_user_id' => 1,
             'updated_by_user_id' => 1,
             'created_at' => Carbon::now(),

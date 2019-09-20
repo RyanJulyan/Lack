@@ -21,7 +21,7 @@ class CreateCompaniesTable extends Migration
             $table->string('companyVatNumber')->nullable();
             $table->string('companyRegNumber')->nullable();
 			$table->double('companyVatRate', 38, 19)->nullable();
-			$table->double('delivery_Arrival_LeadTime_Days', 38, 19)->nullable()->default(3);
+			$table->double('delivery_Arrival_LeadTime_Days', 38, 19)->nullable()->default(7);
             $table->longText('companyBankDetails')->nullable();
             $table->longText('companyTermsOfPayment')->nullable();
 			$table->enum('company_status', ['Active', 'Inactive']);

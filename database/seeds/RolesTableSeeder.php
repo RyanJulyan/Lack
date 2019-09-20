@@ -16,7 +16,7 @@ class RolesTableSeeder extends Seeder
     {
         // 1
         DB::table('roles')->insert([
-            'name' => 'iMining',
+            'name' => 'Super Admin',
             'created_user_id' => 1,
             'updated_by_user_id' => 1,
             'created_at' => Carbon::now(),
@@ -24,7 +24,7 @@ class RolesTableSeeder extends Seeder
         ]);
         // 2
         DB::table('roles')->insert([
-            'name' => 'Manager',
+            'name' => 'Admin',
             'created_user_id' => 1,
             'updated_by_user_id' => 1,
             'created_at' => Carbon::now(),
@@ -32,7 +32,23 @@ class RolesTableSeeder extends Seeder
         ]);
         // 3
         DB::table('roles')->insert([
-            'name' => 'Miner',
+            'name' => 'Team Manager',
+            'created_user_id' => 1,
+            'updated_by_user_id' => 1,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        // 4
+        DB::table('roles')->insert([
+            'name' => 'Content Manager',
+            'created_user_id' => 1,
+            'updated_by_user_id' => 1,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        // 5
+        DB::table('roles')->insert([
+            'name' => 'User',
             'created_user_id' => 1,
             'updated_by_user_id' => 1,
             'created_at' => Carbon::now(),

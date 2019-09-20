@@ -40,10 +40,6 @@ Route::patch('/Admin/Licences', ['as' => 'licences.update', 'uses' => 'Admin\Adm
 Route::get('/Admin/Roles', ['as' => 'roles.index', 'uses' => 'Admin\AdminRoleController@index']);
 Route::post('/Admin/Roles', ['as' => 'roles.store', 'uses' => 'Admin\AdminRoleController@store']);
 Route::patch('/Admin/Roles', ['as' => 'roles.update', 'uses' => 'Admin\AdminRoleController@update']);
-////RockTypes
-Route::get('/Admin/Roles', ['as' => 'roles.index', 'uses' => 'Admin\AdminRoleController@index']);
-Route::post('/Admin/Roles', ['as' => 'roles.store', 'uses' => 'Admin\AdminRoleController@store']);
-Route::patch('/Admin/Roles', ['as' => 'roles.update', 'uses' => 'Admin\AdminRoleController@update']);
 
 Auth::routes();
 

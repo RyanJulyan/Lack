@@ -16,11 +16,12 @@ class CompaniesTableSeeder extends Seeder
     {
         // 1
         DB::table('companies')->insert([
-            'companyName' => 'iMining',
-            'companyDescription' => 'iMining',
-            'industry' => 'Consulting',
-            'companyVatRate' => 0.15,
+            'companyName' => 'Lack',
+            'companyDescription' => 'Lack',
+            'industry' => 'Advertising',
             'company_status' => 'Active',
+            'created_user_id' => 1,
+            'updated_by_user_id' => 1,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
