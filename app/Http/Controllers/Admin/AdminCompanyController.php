@@ -28,15 +28,8 @@ class AdminCompanyController extends Controller
 		$data = collect([]);
 
         $data->Companies =DB::table('companies')
-							->get();
-		
-        DB::table('roles')->insert([
-            'name' => 'Admin',
-            'created_user_id' => 1,
-            'updated_by_user_id' => 1,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
+                            ->get();
+        
         //
 		return view('admin.companies.index', ['data' => $data]);
     }

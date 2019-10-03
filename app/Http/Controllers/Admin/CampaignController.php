@@ -1,8 +1,7 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
-use App\Product;
+use App\Campaign;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,7 +13,7 @@ use Carbon\Carbon;
 
 use Validator;
 
-class AdminProductController extends Controller
+class CampaignController extends Controller
 {
 
     /**
@@ -27,11 +26,11 @@ class AdminProductController extends Controller
 		
 		$data = collect([]);
 
-        $data->Products=DB::table('products')
+        $data->Campaigns=DB::table('campaigns')
         ->get();
 		
         //
-		return view('admin.products.index', ['data' => $data]);
+		return view('admin.campaigns.index', ['data' => $data]);
     }
 
     /**
@@ -55,17 +54,29 @@ class AdminProductController extends Controller
 		//
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'description' => 'required',
+            'campaign_name' => 'required',
+            'campaign_description' => 'required',
+            'ideal_client' => 'required',
+            'achieve' => 'required',
+            'methodology' => 'required',
+            'start_date_time' => 'required',
+            'end_date_time' => 'required',
+            'total_budget_cents' => 'required',
         ])->validate();
 
         $user_id = Auth::user()->id;
 		
 		$data = collect([]);
 
-        $data->Product = Product::create([
-            'name'=>$request->name,
-            'description'=>$request->description,
+        $data->Campaign = Campaign::create([
+            'campaign_name'=>$request->campaign_name,
+            'campaign_description'=>$request->campaign_description,
+            'ideal_client'=>$request->ideal_client,
+            'achieve'=>$request->achieve,
+            'methodology'=>$request->methodology,
+            'start_date_time'=>$request->start_date_time,
+            'end_date_time'=>$request->end_date_time,
+            'total_budget_cents'=>$request->total_budget_cents,
             'created_user_id' => $user_id,
             'updated_by_user_id' => $user_id,
             'created_at' => Carbon::now(),
@@ -74,7 +85,7 @@ class AdminProductController extends Controller
 		
         //
 		return redirect()->action(
-            'Admin\AdminProductController@index'
+            'Admin\CampaignController@index'
         );
     }
 
@@ -112,23 +123,35 @@ class AdminProductController extends Controller
         //
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'description' => 'required',
+            'campaign_name' => 'required',
+            'campaign_description' => 'required',
+            'ideal_client' => 'required',
+            'achieve' => 'required',
+            'methodology' => 'required',
+            'start_date_time' => 'required',
+            'end_date_time' => 'required',
+            'total_budget_cents' => 'required',
         ])->validate();
 
         $user_id = Auth::user()->id;
 
-        DB::table('products')
+        DB::table('campaigns')
         ->where('id', $request->id)
         ->update([
-            'name'=>$request->name,
-            'description'=>$request->description,
+            'campaign_name'=>$request->campaign_name,
+            'campaign_description'=>$request->campaign_description,
+            'ideal_client'=>$request->ideal_client,
+            'achieve'=>$request->achieve,
+            'methodology'=>$request->methodology,
+            'start_date_time'=>$request->start_date_time,
+            'end_date_time'=>$request->end_date_time,
+            'total_budget_cents'=>$request->total_budget_cents,
             'updated_by_user_id' => $user_id,
             'updated_at' => Carbon::now(),
         ]);
 
         return redirect()->action(
-            'Admin\AdminProductController@index'
+            'Admin\CampaignController@index'
         );
     }
 

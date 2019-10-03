@@ -63,6 +63,47 @@
                                 </li>
                             @endif
                         @else
+                            
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Advert Campaign <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="{{action('Admin\CampaignController@index')}}">
+                                        Campaigns
+                                    </a>
+									<a class="dropdown-item" href="{{action('Admin\CampaignAdvertsController@index')}}">
+                                        Campaign Adverts
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Admin <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{action('Admin\AdminUserController@index')}}">
+                                        Users
+                                    </a>
+									<a class="dropdown-item" href="{{action('Admin\AdminCompanyController@index')}}">
+                                        Companies
+                                    </a>
+									<a class="dropdown-item" href="{{action('Admin\AdminAdvertController@index')}}">
+                                        Advert Types
+                                    </a>
+									<a class="dropdown-item" href="{{action('Admin\AdminTeamController@index')}}">
+                                        Teams
+                                    </a>
+									<a class="dropdown-item" href="{{action('Admin\AdminLicenceController@index')}}">
+                                        Licences
+                                    </a>
+									<a class="dropdown-item" href="{{action('Admin\AdminRoleController@index')}}">
+                                        Roles
+                                    </a>
+                                </div>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

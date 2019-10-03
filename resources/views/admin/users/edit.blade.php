@@ -2,7 +2,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Edit Users</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -63,6 +63,22 @@
 								@endforeach
 							</select>
 							@error('team_id')
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+							@enderror
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-12 col-form-label">Role</label>
+						<div class="col-sm-12">
+							<select style="width:100%" name="role_id" id="role_id" class="form-control Select2EditUser"  placeholder="Team" required>
+								@foreach ($data->Roles as $Role)
+									<option value="{{$Role->id}}">{{$Role->name}}</option>
+								@endforeach
+							</select>
+							@error('role_id')
 								<span class="invalid-feedback" role="alert">
 									<strong>{{ $message }}</strong>
 								</span>

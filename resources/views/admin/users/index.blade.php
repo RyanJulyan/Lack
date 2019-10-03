@@ -20,6 +20,7 @@
 								<th>Company</th>
 								<th>Industry</th>
 								<th>Team</th>
+								<th>Role</th>
 								<th>Email Verified At</th>
 								<th></th>
 							  </tr>
@@ -32,6 +33,7 @@
 										<td>{{$User->companyName}}</td>
 										<td>{{$User->industry}}</td>
 										<td>{{$User->team_name}}</td>
+										<td>{{$User->role_name}}</td>
 										<td>{{$User->email_verified_at}}</td>
 										<td>
 											<button 

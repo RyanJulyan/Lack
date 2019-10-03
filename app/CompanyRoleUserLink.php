@@ -18,8 +18,8 @@ class CompanyRoleUserLink extends Model
         'company_id', 
         'user_id',
         'role_id',
-		'created_User_id',
-		'updated_By_User_id',
+		'created_user_id',
+		'updated_by_user_id',
 		'created_at',
 		'updated_at',
     ];

@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Product extends Model
+class Advert extends Model
 {
     use Notifiable;
 
@@ -17,6 +17,8 @@ class Product extends Model
     protected $fillable = [
         'name',
         'description',
+        'view_price_cents',
+        'click_price_cents',
 		'created_user_id',
 		'updated_by_user_id',
 		'created_at',

@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
-use App\User;
-use App\CompanyUserLink;
-use App\CompanyUserTeamLink;
+use App\Campaign;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,13 +9,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-use Illuminate\Support\Facades\Hash;
-
 use Carbon\Carbon;
 
 use Validator;
 
-class AdminRockTypesController extends Controller
+class CampaignAdvertsController extends Controller
 {
 
     /**
@@ -30,12 +25,18 @@ class AdminRockTypesController extends Controller
     {
 		
 		$data = collect([]);
-		
-        $data->RockTypes = DB::table('rock_types AS T')
-						->get();
+
+        $data->Campaigns=DB::table('campaigns')
+        ->get();
+
+        $data->Adverts=DB::table('adverts')
+        ->get();
+
+        $data->CampaignAdverts=DB::table('campaigns')
+        ->get();
 		
         //
-		return view('admin.users.index', ['data' => $data]);
+		return view('admin.campaignadverts.index', ['data' => $data]);
     }
 
     /**
@@ -59,36 +60,29 @@ class AdminRockTypesController extends Controller
 		//
 
         $validator = Validator::make($request->all(), [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'campaign_name' => 'required',
+            'campaign_description' => 'required',
+            'ideal_client' => 'required',
+            'achieve' => 'required',
+            'methodology' => 'required',
+            'start_date_time' => 'required',
+            'end_date_time' => 'required',
+            'total_budget_cents' => 'required',
         ])->validate();
 
         $user_id = Auth::user()->id;
 		
 		$data = collect([]);
 
-        $data->User = User::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>Hash::make($request->password),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        $data->CompanyUserLink = CompanyUserLink::create([
-            'user_id'=> $data->User->id,
-            'company_id'=>$request->company_id,
-            'created_user_id' => $user_id,
-            'updated_by_user_id' => $user_id,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-        $data->CompanyUserTeamLink = CompanyUserTeamLink::create([
-            'user_id'=> $data->User->id,
-            'company_id'=>$request->company_id,
-            'team_id'=>$request->team_id,
+        $data->CampaignAdvert = Campaign::create([
+            'campaign_name'=>$request->campaign_name,
+            'campaign_description'=>$request->campaign_description,
+            'ideal_client'=>$request->ideal_client,
+            'achieve'=>$request->achieve,
+            'methodology'=>$request->methodology,
+            'start_date_time'=>$request->start_date_time,
+            'end_date_time'=>$request->end_date_time,
+            'total_budget_cents'=>$request->total_budget_cents,
             'created_user_id' => $user_id,
             'updated_by_user_id' => $user_id,
             'created_at' => Carbon::now(),
@@ -97,7 +91,7 @@ class AdminRockTypesController extends Controller
 		
         //
 		return redirect()->action(
-            'Admin\AdminUserController@index'
+            'Admin\CampaignAdvertsController@index'
         );
     }
 
@@ -135,49 +129,35 @@ class AdminRockTypesController extends Controller
         //
 
         $validator = Validator::make($request->all(), [
-            'name' => ['required', 'string', 'max:255'],
+            'campaign_name' => 'required',
+            'campaign_description' => 'required',
+            'ideal_client' => 'required',
+            'achieve' => 'required',
+            'methodology' => 'required',
+            'start_date_time' => 'required',
+            'end_date_time' => 'required',
+            'total_budget_cents' => 'required',
         ])->validate();
 
         $user_id = Auth::user()->id;
 
-        DB::table('users')
+        DB::table('campaigns')
         ->where('id', $request->id)
         ->update([
-            'name'=>$request->name,
-            'updated_at' => Carbon::now(),
-        ]);
-
-        DB::table('company_user_links')
-        ->where('user_id', $request->id)
-        ->update([
-            'company_id'=>$request->company_id,
+            'campaign_name'=>$request->campaign_name,
+            'campaign_description'=>$request->campaign_description,
+            'ideal_client'=>$request->ideal_client,
+            'achieve'=>$request->achieve,
+            'methodology'=>$request->methodology,
+            'start_date_time'=>$request->start_date_time,
+            'end_date_time'=>$request->end_date_time,
+            'total_budget_cents'=>$request->total_budget_cents,
             'updated_by_user_id' => $user_id,
             'updated_at' => Carbon::now(),
         ]);
-
-        DB::table('company_user_team_links')
-        ->where('user_id', $request->id)
-        ->update([
-            'company_id'=>$request->company_id,
-            'team_id'=>$request->team_id,
-            'updated_by_user_id' => $user_id,
-            'updated_at' => Carbon::now(),
-        ]);
-		
-		// dd("password",(!empty($request->password)));
-
-		if(!empty($request->password)){
-			// Update Password if set only
-			DB::table('users')
-			->where('id', $request->id)
-			->update([
-				'password'=>Hash::make($request->password),
-				'updated_at' => Carbon::now(),
-			]);
-		}
 
         return redirect()->action(
-            'Admin\AdminUserController@index'
+            'Admin\CampaignAdvertsController@index'
         );
     }
 

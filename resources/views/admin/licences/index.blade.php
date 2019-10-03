@@ -27,7 +27,11 @@
 								@foreach ($data->Licences as $Licence)
 									<tr>
 										<td>{{$Licence->companyName}}</td>
-										<td style="max-width:300px; word-wrap: break-word;">{{$Licence->licence_key}}</td>
+										<td style="max-width:300px; word-wrap: break-word;">
+											<button class="btn btn-default" style="width:100%; max-width:300px; word-wrap: break-word;" onclick="copy_licence_key('licence_key_{{$Licence->id}}')">Copy Licence Key
+											</button>
+											<textarea style="width:100%; max-width:300px; word-wrap: break-word;" id="licence_key_{{$Licence->id}}">{{$Licence->licence_key}}</textarea>
+										</td>
 										<td>{{$Licence->licence_key_expiary_date}}</td>
 										<td>{{$Licence->licence_key_last_payment_date}}</td>
 										<td>{{$Licence->numberOfUsers}}</td>
@@ -59,5 +63,22 @@
 		</div>
 	</div>
 	
+	<script>
+	function copy_licence_key(licence_key_id) {
+		/* Get the text field */
+		var copyText = document.getElementById(licence_key_id);
+
+		/* Select the text field */
+		copyText.focus();
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+		/* Copy the text inside the text field */
+		document.execCommand("copy");
+
+		/* Alert the copied text */
+		alert("Licence Key Copied to Clipboard");
+	} 
+	</script>
 
 @endsection

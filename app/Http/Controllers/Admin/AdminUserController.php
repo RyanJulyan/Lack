@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\User;
 use App\CompanyUserLink;
 use App\CompanyUserTeamLink;
+use App\CompanyRoleUserLink;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -36,12 +37,15 @@ class AdminUserController extends Controller
 						->leftJoin('companies AS C', 'C.id', '=', 'UL.company_id')
 						->leftJoin('company_user_team_links AS UTL', 'UTL.user_id', '=', 'U.id')
 						->leftJoin('teams AS T', 'T.id', '=', 'UTL.team_id')
+						->leftJoin('company_role_user_links AS URL', 'URL.user_id', '=', 'U.id')
+						->leftJoin('roles AS R', 'R.id', '=', 'URL.role_id')
 						->select([
 							 'U.id'
 							,'U.name'
 							,'U.email'
 							,'UTL.team_id'
 							,'T.team_name'
+							,'R.name AS role_name'
 							,'UL.company_id'
 							,'C.companyName'
 							,'C.industry'
@@ -53,6 +57,9 @@ class AdminUserController extends Controller
 						->get();
 		
         $data->Teams =DB::table('teams')
+						->get();
+		
+        $data->Roles =DB::table('roles')
 						->get();
 		
         //
@@ -105,11 +112,21 @@ class AdminUserController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+			
+		$data->CompanyUserTeamLink = CompanyUserTeamLink::create([
+			'user_id'=> $data->User->id,
+			'company_id'=>$request->company_id,
+			'team_id'=>$request->team_id,
+			'created_user_id' => $user_id,
+			'updated_by_user_id' => $user_id,
+			'created_at' => Carbon::now(),
+			'updated_at' => Carbon::now(),
+		]);
 
-        $data->CompanyUserTeamLink = CompanyUserTeamLink::create([
-            'user_id'=> $data->User->id,
+        $data->CompanyRoleUserLink = CompanyRoleUserLink::create([
             'company_id'=>$request->company_id,
-            'team_id'=>$request->team_id,
+            'user_id'=> $data->User->id,
+            'role_id'=>$request->role_id,
             'created_user_id' => $user_id,
             'updated_by_user_id' => $user_id,
             'created_at' => Carbon::now(),
@@ -160,6 +177,10 @@ class AdminUserController extends Controller
         ])->validate();
 
         $user_id = Auth::user()->id;
+		
+		$data = collect([]);
+		
+		// dd($user_id);
 
         DB::table('users')
         ->where('id', $request->id)
@@ -167,23 +188,102 @@ class AdminUserController extends Controller
             'name'=>$request->name,
             'updated_at' => Carbon::now(),
         ]);
+		
+		// dd($request->company_id);
+		
+		$company_user_links =  DB::table('company_user_links')
+								->where('user_id', $request->id)
+								->first();
+		
+		// dd($company_user_links);
+		
+		if(!empty($company_user_links)){
+			
+			DB::table('company_user_links')
+			->where('user_id', $request->id)
+			->update([
+				'company_id'=>$request->company_id,
+				'updated_by_user_id' => $user_id,
+				'updated_at' => Carbon::now(),
+			]);
+			
+		}
+		else{
+			
+			$data->CompanyUserLink = CompanyUserLink::create([
+				'user_id'=> $request->id,
+				'company_id'=>$request->company_id,
+				'created_user_id' => $user_id,
+				'updated_by_user_id' => $user_id,
+				'created_at' => Carbon::now(),
+				'updated_at' => Carbon::now(),
+			]);
+			
+		}
+		
+		// dd($request->team_id);
 
-        DB::table('company_user_links')
-        ->where('user_id', $request->id)
-        ->update([
-            'company_id'=>$request->company_id,
-            'updated_by_user_id' => $user_id,
-            'updated_at' => Carbon::now(),
-        ]);
+		
+		$company_user_team_links = DB::table('company_user_team_links')
+									->where('user_id', $request->id)
+									->first();
+		
+		if(!empty($company_user_team_links)){
+			
+			DB::table('company_user_team_links')
+			->where('user_id', $request->id)
+			->update([
+				'company_id'=>$request->company_id,
+				'team_id'=>$request->team_id,
+				'updated_by_user_id' => $user_id,
+				'updated_at' => Carbon::now(),
+			]);
+			
+		}
+		else{
+			
+			$data->CompanyUserTeamLink = CompanyUserTeamLink::create([
+				'user_id'=> $request->id,
+				'company_id'=>$request->company_id,
+				'team_id'=>$request->team_id,
+				'created_user_id' => $user_id,
+				'updated_by_user_id' => $user_id,
+				'created_at' => Carbon::now(),
+				'updated_at' => Carbon::now(),
+			]);
+			
+		}
+		
+		
+		$company_role_user_links = DB::table('company_role_user_links')
+									->where('user_id', $request->id)
+									->first();
+		
+		if(!empty($company_role_user_links)){
+			
+			DB::table('company_role_user_links')
+			->where('user_id', $request->id)
+			->update([
+				'company_id'=>$request->company_id,
+				'role_id'=>$request->team_id,
+				'updated_by_user_id' => $user_id,
+				'updated_at' => Carbon::now(),
+			]);
+			
+		}
+		else{
 
-        DB::table('company_user_team_links')
-        ->where('user_id', $request->id)
-        ->update([
-            'company_id'=>$request->company_id,
-            'team_id'=>$request->team_id,
-            'updated_by_user_id' => $user_id,
-            'updated_at' => Carbon::now(),
-        ]);
+			$data->CompanyRoleUserLink = CompanyRoleUserLink::create([
+				'company_id'=>$request->company_id,
+				'user_id'=> $request->id,
+				'role_id'=>$request->role_id,
+				'created_user_id' => $user_id,
+				'updated_by_user_id' => $user_id,
+				'created_at' => Carbon::now(),
+				'updated_at' => Carbon::now(),
+			]);
+			
+		}
 		
 		// dd("password",(!empty($request->password)));
 

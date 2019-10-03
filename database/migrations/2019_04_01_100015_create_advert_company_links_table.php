@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductCompanyLinksTable extends Migration
+class CreateAdvertCompanyLinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateProductCompanyLinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_company_links', function (Blueprint $table) {
+        Schema::create('advert_company_links', function (Blueprint $table) {
             $table->bigInteger('company_id')->unsigned();
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
-            $table->bigInteger('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->bigInteger('advert_id')->unsigned();
+            $table->foreign('advert_id')->references('id')->on('adverts')->onDelete('cascade');
             $table->string('licence_key')->index();
             $table->date('licence_expiry_date')->index();
 			$table->bigInteger('created_user_id')->unsigned()->index();
@@ -35,7 +35,7 @@ class CreateProductCompanyLinksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_company_links');
+        Schema::dropIfExists('advert_company_links');
     }
 }
 

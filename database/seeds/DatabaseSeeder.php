@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
 		
 		//Companies
         $this->call(CompaniesTableSeeder::class);
+		
+		//Adverts
+        $this->call(AdvertsTableSeeder::class);
     }
 }

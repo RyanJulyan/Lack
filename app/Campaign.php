@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class RockType extends Model
+class Campaign extends Model
 {
     use Notifiable;
 
@@ -15,9 +15,14 @@ class RockType extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'density',
-        'hardness',
+        'campaign_name',
+        'campaign_description',
+        'ideal_client',
+        'achieve',
+        'methodology',
+        'start_date_time',
+        'end_date_time',
+        'total_budget_cents',
 		'created_user_id',
 		'updated_by_user_id',
 		'created_at',
